@@ -1,0 +1,5481 @@
+{
+  "S01": {
+    "input": "There is a window on the left wall. A chair is in the center of the room.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S02": {
+    "input": "There is a door on the back wall. A table is in the center of the room.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S03": {
+    "input": "There is a window on the right wall. A sofa is against the left wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "sofa",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "walkable_over"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S04": {
+    "input": "There is a door on the right wall. A bed is against the back wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "bed",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "walkable_over"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S05": {
+    "input": "There is a window on the back wall. A closet is on the left side of the room.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "closet",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "left_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S06": {
+    "input": "There is a door on the left wall. An armchair is in the center of the room.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "armchair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S07": {
+    "input": "There is a window on the front wall. A desk is against the right wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "desk",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_front_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S08": {
+    "input": "There is a door on the back wall. A bookshelf is against the left wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "bookshelf",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S09": {
+    "input": "There is a window on the right wall. A nightstand is in the center of the room.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "nightstand",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S10": {
+    "input": "There is a door on the left wall. A wardrobe is against the right wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "wardrobe",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S11": {
+    "input": "There is a window on the back wall. A fire extinguisher is on the left side of the room.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "fire_extinguisher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "left_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S12": {
+    "input": "There is a door on the right wall. A TV is against the back wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "tv",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S13": {
+    "input": "There is a window on the left wall. An injured person is lying in the center of the room.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "injured",
+        "placement_type": "floor",
+        "attributes": [
+          "lying"
+        ],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S14": {
+    "input": "There is a door on the back wall. There is rubble on the right side of the room.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "rubble",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "right_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S15": {
+    "input": "There is a window on the back wall. A chair is on the left side of the room.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "left_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M01": {
+    "input": "There is a bed against the back wall. A nightstand is next to the bed. A door is on the right wall. A chair is in front of the bed.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "bed",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_2",
+        "type": "nightstand",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "in_front_of",
+        "target_id": "obj_1"
+      }
+    ]
+  },
+  "M02": {
+    "input": "There is a sofa against the back wall. A table is in the center of the room. A window is on the left wall. A chair is next to the table.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "sofa",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_2",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "next_to",
+        "target_id": "obj_2"
+      }
+    ]
+  },
+  "M03": {
+    "input": "There is a door on the back wall. There is a window on the right wall. A table is in the center. A chair is next to the table.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "next_to",
+        "target_id": "obj_3"
+      }
+    ]
+  },
+  "M04": {
+    "input": "There is a desk against the left wall. A chair is in front of the desk. There is rubble in the center of the room. A door is on the right wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "desk",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_3",
+        "type": "rubble",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_front_of",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M05": {
+    "input": "There is a sofa against the back wall. A table is in front of the sofa. A window is on the left wall. A bookshelf is against the right wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "sofa",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_2",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "bookshelf",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_front_of",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M06": {
+    "input": "There is a door on the back wall. An injured person is lying in the center. A first aid kit is on the right side. A chair is next to the injured person.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "injured",
+        "placement_type": "floor",
+        "attributes": [
+          "lying"
+        ],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_3",
+        "type": "first_aid",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_4",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "right_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "next_to",
+        "target_id": "obj_2"
+      }
+    ]
+  },
+  "M07": {
+    "input": "There is a door on the back wall. A table is in the center of the room blocking the path. A chair is next to the table. A window is on the left wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [
+          "blocking"
+        ],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_4",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "next_to",
+        "target_id": "obj_2"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M08": {
+    "input": "There is concrete debris in the center of the room. An injured person is next to the concrete. A door is on the right wall. A window is on the back wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "concrete",
+        "placement_type": "floor",
+        "attributes": [
+          "debris"
+        ],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "injured",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M09": {
+    "input": "There is a bed against the back wall. A wardrobe is against the left wall. A window is on the right wall. There is rubble on the left side of the room.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "bed",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_2",
+        "type": "wardrobe",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "rubble",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "left_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M10": {
+    "input": "There is a desk against the back wall. A chair is in front of the desk. A bookshelf is against the left wall. A door is on the right wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "desk",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_3",
+        "type": "bookshelf",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_front_of",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M11": {
+    "input": "There is a stretcher in the center of the room. A wheelchair is next to the stretcher. A door is on the back wall. A window is on the left wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "stretcher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "wheelchair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M12": {
+    "input": "There is a TV against the back wall. An armchair is in the center of the room. A couch is against the left wall. A door is on the right wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "tv",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "armchair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "couch",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M13": {
+    "input": "There is a bed against the back wall. A nightstand is next to the bed. A lamp is on the nightstand. A door is on the left wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "bed",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_2",
+        "type": "nightstand",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "lamp",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on",
+        "target_id": "obj_2"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M14": {
+    "input": "There is a door on the back wall. There is rubble in the center of the room. A broken wall is on the left side. A table is on the right side.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "rubble",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "broken_wall",
+        "placement_type": "floor",
+        "attributes": [
+          "broken"
+        ],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "left_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "right_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M15": {
+    "input": "There is an injured person in the center of the room. An oxygen tank is next to the injured person. A stretcher is on the right side. A door is on the back wall. A window is on the left wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "injured",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_2",
+        "type": "oxygen_tank",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_3",
+        "type": "stretcher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "right_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S16": {
+    "input": "There is a large bed against the back wall. A window is on the right wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "bed",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_2",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S17": {
+    "input": "A small chair is on the left side of the room. A door is on the back wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.7,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_2",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "left_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S18": {
+    "input": "There is a huge wardrobe on the right side. A window is on the front wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "wardrobe",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 2.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "right_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_front_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S19": {
+    "input": "There is a door on the left wall. A collapsed bookshelf is on the right side.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "bookshelf",
+        "placement_type": "floor",
+        "attributes": [
+          "collapsed"
+        ],
+        "scale_modifier": 1.3,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "right_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S20": {
+    "input": "A victim is lying in the center of the room. A door is on the right wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "victim",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_2",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S21": {
+    "input": "There is a tiny lamp on the right side of the room. A door is on the back wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "lamp",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.5,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_2",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "right_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S22": {
+    "input": "There is a couch against the right wall. A window is on the left wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "couch",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_2",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S23": {
+    "input": "A wheelchair is in the center of the room. A door is on the front wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "wheelchair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_front_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S24": {
+    "input": "There is a door on the right wall. A stretcher is on the left side of the room.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "stretcher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "left_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S25": {
+    "input": "There is a window on the back wall. A big table is against the left wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S26": {
+    "input": "A door is on the right wall. An obstacle is in the center of the room.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "obstacle",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S27": {
+    "input": "There is a window on the back wall. There is debris on the right side of the room.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "debris",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "right_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S28": {
+    "input": "There is a door on the front wall. A large sofa is against the back wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "sofa",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "walkable_over"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_front_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S29": {
+    "input": "A concrete block is on the left side of the room. A door is on the back wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "concrete",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "left_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S30": {
+    "input": "There is a window on the right wall. A person is in the center of the room.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "person",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S31": {
+    "input": "There is a small desk on the right side of the room. A window is on the back wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "desk",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.7,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "right_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S32": {
+    "input": "A broken wall segment is on the right side. A door is on the left wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "broken_wall",
+        "placement_type": "floor",
+        "attributes": [
+          "broken"
+        ],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "right_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S33": {
+    "input": "There is a door on the back wall. A huge closet is against the right wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "closet",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 2.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S34": {
+    "input": "There is a window on the left wall. A first aid kit is in the center of the room.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "first_aid",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "S35": {
+    "input": "There is a door on the back wall. A large armchair is on the left side of the room.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "armchair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "left_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M16": {
+    "input": "There is a large bed against the back wall. A nightstand is next to the bed. A door is on the left wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "bed",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_2",
+        "type": "nightstand",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M17": {
+    "input": "A sofa is against the right wall. A small table is in front of the sofa. A window is on the back wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "sofa",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_2",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.7,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_front_of",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M18": {
+    "input": "There is a door on the back wall. A stretcher is in the center. A wheelchair is next to the stretcher. A window is on the left wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "stretcher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "wheelchair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "next_to",
+        "target_id": "obj_2"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M19": {
+    "input": "There is a window on the left wall. A desk is against the back wall. A chair is in front of the desk. There is rubble on the right side.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "desk",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_4",
+        "type": "rubble",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "in_front_of",
+        "target_id": "obj_2"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "right_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M20": {
+    "input": "A victim is lying in the center of the room. An oxygen tank is next to the victim. A door is on the right wall. A window is on the back wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "victim",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_2",
+        "type": "oxygen_tank",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M21": {
+    "input": "There is a door on the left wall. A large wardrobe is against the right wall. A broken chair is in the center.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "wardrobe",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [
+          "broken"
+        ],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M22": {
+    "input": "There is a window on the right wall. A couch is against the back wall. A small table is in front of the couch. A door is on the left wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "couch",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_3",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.7,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "in_front_of",
+        "target_id": "obj_2"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M23": {
+    "input": "There is a collapsed bookshelf on the left side. A door is on the back wall. An injured person is next to the bookshelf. A first aid kit is in the center.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "bookshelf",
+        "placement_type": "floor",
+        "attributes": [
+          "collapsed"
+        ],
+        "scale_modifier": 1.3,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "injured",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_4",
+        "type": "first_aid",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "left_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M24": {
+    "input": "A huge debris pile is in the center of the room. A door is on the right wall. A window is on the back wall. A chair is on the left side.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "debris",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 2.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "left_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M25": {
+    "input": "There is a door on the back wall. A small nightstand is on the right side. A lamp is on the nightstand. A window is on the left wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "nightstand",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.7,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "lamp",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_4",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "right_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on",
+        "target_id": "obj_2"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M26": {
+    "input": "A fire extinguisher is on the right side of the room. A door is on the back wall. A window is on the left wall. A table is in the center.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "fire_extinguisher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_2",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "right_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M27": {
+    "input": "There is a door on the right wall. A wheelchair is in the center. A stretcher is next to the wheelchair. A window is on the front wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "wheelchair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "stretcher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "next_to",
+        "target_id": "obj_2"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_front_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M28": {
+    "input": "A large table is against the back wall. A chair is in front of the table. A door is on the left wall. There is debris on the right side.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "debris",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_front_of",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "right_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M29": {
+    "input": "There is a window on the back wall. A wardrobe is against the left wall. A bed is against the right wall. A door is on the front wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "wardrobe",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "bed",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_front_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "M30": {
+    "input": "There is a tiny fire extinguisher on the left side. A big obstacle is in the center. A door is on the back wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "fire_extinguisher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.5,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_2",
+        "type": "obstacle",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "left_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C01": {
+    "input": "There is a door on the back wall. A window is on the left wall. A large bed is against the right wall. A nightstand is next to the bed. There is rubble in the center.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "bed",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_4",
+        "type": "nightstand",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "rubble",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "next_to",
+        "target_id": "obj_3"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C02": {
+    "input": "An injured person is lying in the center. A stretcher is next to the injured person. A first aid kit is next to the stretcher. A door is on the back wall. A window is on the right wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "injured",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_2",
+        "type": "stretcher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "first_aid",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "next_to",
+        "target_id": "obj_2"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C03": {
+    "input": "There is a huge sofa against the back wall. A small table is in front of the sofa. A chair is next to the table. A door is on the right wall. A window is on the left wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "sofa",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 2.0,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_2",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.7,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_front_of",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "next_to",
+        "target_id": "obj_2"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C04": {
+    "input": "There is a door on the back wall. A window is on the right wall. A collapsed wardrobe is on the left side. There is rubble next to the wardrobe. A victim is in the center.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "wardrobe",
+        "placement_type": "floor",
+        "attributes": [
+          "collapsed"
+        ],
+        "scale_modifier": 1.3,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "rubble",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "victim",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "left_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "next_to",
+        "target_id": "obj_3"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C05": {
+    "input": "A large desk is against the back wall. A chair is in front of the desk. A bookshelf is against the left wall. A door is on the right wall. A window is on the front wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "desk",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_3",
+        "type": "bookshelf",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_front_of",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "on_front_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C06": {
+    "input": "There is debris in the center of the room. A door is on the back wall. A window is on the left wall. A broken chair is on the right side. A fire extinguisher is on the right side.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "debris",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [
+          "broken"
+        ],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_5",
+        "type": "fire_extinguisher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "right_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "right_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C07": {
+    "input": "There is a door on the left wall. A window is on the back wall. A large bed is against the right wall. A nightstand is next to the bed. A small lamp is on the nightstand.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "bed",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_4",
+        "type": "nightstand",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "lamp",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.7,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "next_to",
+        "target_id": "obj_3"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "on",
+        "target_id": "obj_4"
+      }
+    ]
+  },
+  "C08": {
+    "input": "There is a victim in the center of the room. An oxygen tank is next to the victim. A wheelchair is on the right side. A stretcher is on the left side. A door is on the back wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "victim",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_2",
+        "type": "oxygen_tank",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_3",
+        "type": "wheelchair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "stretcher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "right_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "left_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C09": {
+    "input": "A couch is against the back wall. An armchair is on the right side. A small table is in the center. A door is on the left wall. There is debris on the right side.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "couch",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_2",
+        "type": "armchair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.7,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "debris",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "right_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "right_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C10": {
+    "input": "There is a huge concrete block in the center. A door is on the back wall. A window is on the right wall. An injured person is next to the concrete. A first aid kit is next to the injured person.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "concrete",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 2.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "injured",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_5",
+        "type": "first_aid",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "next_to",
+        "target_id": "obj_4"
+      }
+    ]
+  },
+  "C11": {
+    "input": "There is a door on the back wall. A window is on the left wall. A broken wardrobe is against the right wall. A collapsed table is in the center. There is rubble next to the table.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "wardrobe",
+        "placement_type": "floor",
+        "attributes": [
+          "broken"
+        ],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [
+          "collapsed"
+        ],
+        "scale_modifier": 1.3,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "rubble",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "next_to",
+        "target_id": "obj_4"
+      }
+    ]
+  },
+  "C12": {
+    "input": "A large bed is against the back wall. A nightstand is next to the bed. A tiny lamp is on the nightstand. A door is on the left wall. A window is on the right wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "bed",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_2",
+        "type": "nightstand",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "lamp",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.5,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on",
+        "target_id": "obj_2"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C13": {
+    "input": "There is a fire extinguisher on the left side. A door is on the back wall. A window is on the right wall. A big obstacle is in the center. A stretcher is on the right side.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "fire_extinguisher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_2",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "obstacle",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "stretcher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "left_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "right_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C14": {
+    "input": "There is a desk against the left wall. A chair is in front of the desk. A bookshelf is against the back wall. A window is on the right wall. A door is on the front wall. There is debris in the center.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "desk",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_3",
+        "type": "bookshelf",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_6",
+        "type": "debris",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_front_of",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "on_front_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_6",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C15": {
+    "input": "An injured person is on the right side of the room. A stretcher is next to the injured person. A door is on the back wall. A window is on the left wall. A first aid kit is in the center.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "injured",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_2",
+        "type": "stretcher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "first_aid",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "right_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C16": {
+    "input": "There is a window on the right wall. A window is on the left wall. A door is on the back wall. A large sofa is against the front wall. A table is in the center.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "sofa",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_5",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_front_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C17": {
+    "input": "There is a large wardrobe against the left wall. A small desk is against the right wall. A chair is in front of the desk. A door is on the back wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "wardrobe",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "desk",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.7,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "in_front_of",
+        "target_id": "obj_2"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C18": {
+    "input": "There is rubble on the left side. There is debris on the right side. A door is on the back wall. An injured person is in the center. A first aid kit is next to the injured person.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "rubble",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "debris",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "injured",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_5",
+        "type": "first_aid",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "left_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "right_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "next_to",
+        "target_id": "obj_4"
+      }
+    ]
+  },
+  "C19": {
+    "input": "A bed is against the back wall. A nightstand is next to the bed. A door is on the left wall. A broken chair is in the center. A window is on the right wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "bed",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_2",
+        "type": "nightstand",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [
+          "broken"
+        ],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_5",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C20": {
+    "input": "There is a stretcher in the center. An oxygen tank is next to the stretcher. A wheelchair is on the left side. A door is on the back wall. A window is on the front wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "stretcher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "oxygen_tank",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_3",
+        "type": "wheelchair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "left_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "on_front_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C21": {
+    "input": "There is a window on the back wall. A window is on the right wall. A door is on the left wall. There is huge rubble in the center. A victim is next to the rubble.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "rubble",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 2.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "victim",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "next_to",
+        "target_id": "obj_4"
+      }
+    ]
+  },
+  "C22": {
+    "input": "A couch is against the right wall. A small table is in front of the couch. A chair is next to the table. A door is on the back wall. A window is on the left wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "couch",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_2",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.7,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_front_of",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "next_to",
+        "target_id": "obj_2"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C23": {
+    "input": "There is a door on the back wall. A door is on the right wall. A large sofa is against the left wall. A table is in the center. A chair is in front of the table.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "sofa",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_4",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "in_front_of",
+        "target_id": "obj_4"
+      }
+    ]
+  },
+  "C24": {
+    "input": "A broken wall is on the left side of the room. There is rubble next to the broken wall. A door is on the back wall. A window is on the right wall. An obstacle is in the center.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "broken_wall",
+        "placement_type": "floor",
+        "attributes": [
+          "broken"
+        ],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "rubble",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "obstacle",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "left_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C25": {
+    "input": "There is a fire extinguisher on the right side. A wheelchair is in the center. An injured person is next to the wheelchair. A first aid kit is next to the injured person. A door is on the back wall. A window is on the left wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "fire_extinguisher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_2",
+        "type": "wheelchair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "injured",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_4",
+        "type": "first_aid",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_5",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_6",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "right_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "next_to",
+        "target_id": "obj_2"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "next_to",
+        "target_id": "obj_3"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_6",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C26": {
+    "input": "There is a large table in the center of the room. A chair is in front of the table. A bookshelf is against the back wall. A door is on the left wall. A window is on the right wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_3",
+        "type": "bookshelf",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_front_of",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C27": {
+    "input": "A small wardrobe is against the left wall. A bed is against the back wall. A nightstand is next to the bed. A door is on the right wall. There is debris in the center.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "wardrobe",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.7,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "bed",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_3",
+        "type": "nightstand",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "debris",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "next_to",
+        "target_id": "obj_2"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "in_center",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C28": {
+    "input": "There is a huge obstacle in the center. A victim is next to the obstacle. A door is on the back wall. A window is on the left wall. A first aid kit is on the right side.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "obstacle",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 2.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "victim",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "first_aid",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "right_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C29": {
+    "input": "There is a door on the back wall. A large closet is against the left wall. A small desk is against the right wall. A chair is in front of the desk. A window is on the front wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "closet",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "desk",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.7,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_5",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "in_front_of",
+        "target_id": "obj_3"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "on_front_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C30": {
+    "input": "There is rubble in the center of the room. A broken wall is on the left side. A door is on the back wall. A window is on the right wall. A fire extinguisher is on the left side. An injured person is next to the rubble.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "rubble",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "broken_wall",
+        "placement_type": "floor",
+        "attributes": [
+          "broken"
+        ],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "fire_extinguisher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_6",
+        "type": "injured",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "left_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "left_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_6",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      }
+    ]
+  },
+  "C31": {
+    "input": "There is a small sofa against the back wall. A tiny table is in front of the sofa. A door is on the left wall. A window is on the right wall. There is debris on the left side.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "sofa",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.7,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_2",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.5,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "debris",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_front_of",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "left_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C32": {
+    "input": "There is a door on the back wall. A large bookshelf is against the left wall. An armchair is on the right side. A window is on the front wall. A small lamp is on the right side.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "bookshelf",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.5,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "armchair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "lamp",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.7,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "right_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_front_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "right_of",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C33": {
+    "input": "A wheelchair is on the left side. An oxygen tank is next to the wheelchair. A stretcher is in the center. A door is on the back wall. A window is on the right wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "wheelchair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "oxygen_tank",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_3",
+        "type": "stretcher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "left_of",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C34": {
+    "input": "There is a huge bed against the back wall. A nightstand is next to the bed. A small lamp is on the nightstand. A wardrobe is against the left wall. A door is on the right wall.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "bed",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 2.0,
+        "traversability": "walkable_over"
+      },
+      {
+        "id": "obj_2",
+        "type": "nightstand",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_3",
+        "type": "lamp",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 0.7,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_4",
+        "type": "wardrobe",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on",
+        "target_id": "obj_2"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "on_right_wall",
+        "target_id": "room"
+      }
+    ]
+  },
+  "C35": {
+    "input": "There is a collapsed table in the center. A chair is in front of the table. A door is on the back wall. A window is on the left wall. There is rubble next to the table. A fire extinguisher is on the right side.",
+    "assets": [
+      {
+        "id": "obj_1",
+        "type": "table",
+        "placement_type": "floor",
+        "attributes": [
+          "collapsed"
+        ],
+        "scale_modifier": 1.3,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_2",
+        "type": "chair",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      },
+      {
+        "id": "obj_3",
+        "type": "door",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_4",
+        "type": "window",
+        "placement_type": "wall",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_5",
+        "type": "rubble",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "blocked"
+      },
+      {
+        "id": "obj_6",
+        "type": "fire_extinguisher",
+        "placement_type": "floor",
+        "attributes": [],
+        "scale_modifier": 1.0,
+        "traversability": "passable"
+      }
+    ],
+    "relations": [
+      {
+        "source_id": "obj_1",
+        "relation": "in_center",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_2",
+        "relation": "in_front_of",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_3",
+        "relation": "on_back_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_4",
+        "relation": "on_left_wall",
+        "target_id": "room"
+      },
+      {
+        "source_id": "obj_5",
+        "relation": "next_to",
+        "target_id": "obj_1"
+      },
+      {
+        "source_id": "obj_6",
+        "relation": "right_of",
+        "target_id": "room"
+      }
+    ]
+  }
+}

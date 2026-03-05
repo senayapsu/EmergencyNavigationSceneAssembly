@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+graf_llm_venv/
+venv/
+env/
+
+# Environment variables
+.env
+*.env
+
+# API Keys (ÇOK ÖNEMLİ!)
+*API_KEY*
+
+# 3D Models (Büyük dosyalar)
+glbs/
+objects/
+*.glb
+*.gltf
+*.obj
+*.mtl
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+~$*.docx
+~*.docx

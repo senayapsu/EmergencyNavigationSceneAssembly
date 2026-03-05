@@ -1,0 +1,46 @@
+======================================================================
+  3D EMERGENCY SCENE GENERATOR — SESSION LOG
+  Başlangıç: 2026-03-04 21:13:49
+======================================================================
+
+
+======================================================================
+  🎙️  INPUT  : "There is a window on the left wall. A chair is in the center of the room."
+  🕐  Zaman  : 21:15:22
+======================================================================
+  🧠 LLM JSON OUTPUT:
+----------------------------------------------------------------------
+{
+  "assets": [
+    {
+      "id": "window_1",
+      "type": "window",
+      "placement_type": "wall",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "blocked"
+    },
+    {
+      "id": "chair_1",
+      "type": "chair",
+      "placement_type": "floor",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "walkable_over"
+    }
+  ],
+  "relations": [
+    {
+      "source_id": "window_1",
+      "relation": "on_left_wall",
+      "target_id": "room"
+    },
+    {
+      "source_id": "chair_1",
+      "relation": "in_center",
+      "target_id": "room"
+    }
+  ]
+}
+----------------------------------------------------------------------
+

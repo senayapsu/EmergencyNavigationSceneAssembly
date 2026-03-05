@@ -1,0 +1,112 @@
+# TEST SENTENCES — 100 CASE
+# Her satır bir test cümlesi. # ile başlayan satırlar atlanır.
+
+# ── SIMPLE — Mevcut (S01–S15) ──────────────────────────────────
+There is a window on the left wall. A chair is in the center of the room.
+There is a door on the back wall. A table is in the center of the room.
+There is a window on the right wall. A sofa is against the left wall.
+There is a door on the right wall. A bed is against the back wall.
+There is a window on the back wall. A closet is on the left side of the room.
+There is a door on the left wall. An armchair is in the center of the room.
+There is a window on the front wall. A desk is against the right wall.
+There is a door on the back wall. A bookshelf is against the left wall.
+There is a window on the right wall. A nightstand is in the center of the room.
+There is a door on the left wall. A wardrobe is against the right wall.
+There is a window on the back wall. A fire extinguisher is on the left side of the room.
+There is a door on the right wall. A TV is against the back wall.
+There is a window on the left wall. An injured person is lying in the center of the room.
+There is a door on the back wall. There is rubble on the right side of the room.
+There is a window on the back wall. A chair is on the left side of the room.
+
+# ── SIMPLE — Yeni (S16–S35) ────────────────────────────────────
+There is a large bed against the back wall. A window is on the right wall.
+A small chair is on the left side of the room. A door is on the back wall.
+There is a huge wardrobe on the right side. A window is on the front wall.
+There is a door on the left wall. A collapsed bookshelf is on the right side.
+A victim is lying in the center of the room. A door is on the right wall.
+There is a tiny lamp on the right side of the room. A door is on the back wall.
+There is a couch against the right wall. A window is on the left wall.
+A wheelchair is in the center of the room. A door is on the front wall.
+There is a door on the right wall. A stretcher is on the left side of the room.
+There is a window on the back wall. A big table is against the left wall.
+A door is on the right wall. An obstacle is in the center of the room.
+There is a window on the back wall. There is debris on the right side of the room.
+There is a door on the front wall. A large sofa is against the back wall.
+A concrete block is on the left side of the room. A door is on the back wall.
+There is a window on the right wall. A person is in the center of the room.
+There is a small desk on the right side of the room. A window is on the back wall.
+A broken wall segment is on the right side. A door is on the left wall.
+There is a door on the back wall. A huge closet is against the right wall.
+There is a window on the left wall. A first aid kit is in the center of the room.
+There is a door on the back wall. A large armchair is on the left side of the room.
+
+# ── MEDIUM — Mevcut (M01–M15) ──────────────────────────────────
+There is a bed against the back wall. A nightstand is next to the bed. A door is on the right wall. A chair is in front of the bed.
+There is a sofa against the back wall. A table is in the center of the room. A window is on the left wall. A chair is next to the table.
+There is a door on the back wall. There is a window on the right wall. A table is in the center. A chair is next to the table.
+There is a desk against the left wall. A chair is in front of the desk. There is rubble in the center of the room. A door is on the right wall.
+There is a sofa against the back wall. A table is in front of the sofa. A window is on the left wall. A bookshelf is against the right wall.
+There is a door on the back wall. An injured person is lying in the center. A first aid kit is on the right side. A chair is next to the injured person.
+There is a door on the back wall. A table is in the center of the room blocking the path. A chair is next to the table. A window is on the left wall.
+There is concrete debris in the center of the room. An injured person is next to the concrete. A door is on the right wall. A window is on the back wall.
+There is a bed against the back wall. A wardrobe is against the left wall. A window is on the right wall. There is rubble on the left side of the room.
+There is a desk against the back wall. A chair is in front of the desk. A bookshelf is against the left wall. A door is on the right wall.
+There is a stretcher in the center of the room. A wheelchair is next to the stretcher. A door is on the back wall. A window is on the left wall.
+There is a TV against the back wall. An armchair is in the center of the room. A couch is against the left wall. A door is on the right wall.
+There is a bed against the back wall. A nightstand is next to the bed. A lamp is on the nightstand. A door is on the left wall.
+There is a door on the back wall. There is rubble in the center of the room. A broken wall is on the left side. A table is on the right side.
+There is an injured person in the center of the room. An oxygen tank is next to the injured person. A stretcher is on the right side. A door is on the back wall. A window is on the left wall.
+
+# ── MEDIUM — Yeni (M16–M30) ────────────────────────────────────
+There is a large bed against the back wall. A nightstand is next to the bed. A door is on the left wall.
+A sofa is against the right wall. A small table is in front of the sofa. A window is on the back wall.
+There is a door on the back wall. A stretcher is in the center. A wheelchair is next to the stretcher. A window is on the left wall.
+There is a window on the left wall. A desk is against the back wall. A chair is in front of the desk. There is rubble on the right side.
+A victim is lying in the center of the room. An oxygen tank is next to the victim. A door is on the right wall. A window is on the back wall.
+There is a door on the left wall. A large wardrobe is against the right wall. A broken chair is in the center.
+There is a window on the right wall. A couch is against the back wall. A small table is in front of the couch. A door is on the left wall.
+There is a collapsed bookshelf on the left side. A door is on the back wall. An injured person is next to the bookshelf. A first aid kit is in the center.
+A huge debris pile is in the center of the room. A door is on the right wall. A window is on the back wall. A chair is on the left side.
+There is a door on the back wall. A small nightstand is on the right side. A lamp is on the nightstand. A window is on the left wall.
+A fire extinguisher is on the right side of the room. A door is on the back wall. A window is on the left wall. A table is in the center.
+There is a door on the right wall. A wheelchair is in the center. A stretcher is next to the wheelchair. A window is on the front wall.
+A large table is against the back wall. A chair is in front of the table. A door is on the left wall. There is debris on the right side.
+There is a window on the back wall. A wardrobe is against the left wall. A bed is against the right wall. A door is on the front wall.
+There is a tiny fire extinguisher on the left side. A big obstacle is in the center. A door is on the back wall.
+
+# ── COMPLEX (C01–C35) ──────────────────────────────────────────
+There is a door on the back wall. A window is on the left wall. A large bed is against the right wall. A nightstand is next to the bed. There is rubble in the center.
+An injured person is lying in the center. A stretcher is next to the injured person. A first aid kit is next to the stretcher. A door is on the back wall. A window is on the right wall.
+There is a huge sofa against the back wall. A small table is in front of the sofa. A chair is next to the table. A door is on the right wall. A window is on the left wall.
+There is a door on the back wall. A window is on the right wall. A collapsed wardrobe is on the left side. There is rubble next to the wardrobe. A victim is in the center.
+A large desk is against the back wall. A chair is in front of the desk. A bookshelf is against the left wall. A door is on the right wall. A window is on the front wall.
+There is debris in the center of the room. A door is on the back wall. A window is on the left wall. A broken chair is on the right side. A fire extinguisher is on the right side.
+There is a door on the left wall. A window is on the back wall. A large bed is against the right wall. A nightstand is next to the bed. A small lamp is on the nightstand.
+There is a victim in the center of the room. An oxygen tank is next to the victim. A wheelchair is on the right side. A stretcher is on the left side. A door is on the back wall.
+A couch is against the back wall. An armchair is on the right side. A small table is in the center. A door is on the left wall. There is debris on the right side.
+There is a huge concrete block in the center. A door is on the back wall. A window is on the right wall. An injured person is next to the concrete. A first aid kit is next to the injured person.
+There is a door on the back wall. A window is on the left wall. A broken wardrobe is against the right wall. A collapsed table is in the center. There is rubble next to the table.
+A large bed is against the back wall. A nightstand is next to the bed. A tiny lamp is on the nightstand. A door is on the left wall. A window is on the right wall.
+There is a fire extinguisher on the left side. A door is on the back wall. A window is on the right wall. A big obstacle is in the center. A stretcher is on the right side.
+There is a desk against the left wall. A chair is in front of the desk. A bookshelf is against the back wall. A window is on the right wall. A door is on the front wall. There is debris in the center.
+An injured person is on the right side of the room. A stretcher is next to the injured person. A door is on the back wall. A window is on the left wall. A first aid kit is in the center.
+There is a window on the right wall. A window is on the left wall. A door is on the back wall. A large sofa is against the front wall. A table is in the center.
+There is a large wardrobe against the left wall. A small desk is against the right wall. A chair is in front of the desk. A door is on the back wall.
+There is rubble on the left side. There is debris on the right side. A door is on the back wall. An injured person is in the center. A first aid kit is next to the injured person.
+A bed is against the back wall. A nightstand is next to the bed. A door is on the left wall. A broken chair is in the center. A window is on the right wall.
+There is a stretcher in the center. An oxygen tank is next to the stretcher. A wheelchair is on the left side. A door is on the back wall. A window is on the front wall.
+There is a window on the back wall. A window is on the right wall. A door is on the left wall. There is huge rubble in the center. A victim is next to the rubble.
+A couch is against the right wall. A small table is in front of the couch. A chair is next to the table. A door is on the back wall. A window is on the left wall.
+There is a door on the back wall. A door is on the right wall. A large sofa is against the left wall. A table is in the center. A chair is in front of the table.
+A broken wall is on the left side of the room. There is rubble next to the broken wall. A door is on the back wall. A window is on the right wall. An obstacle is in the center.
+There is a fire extinguisher on the right side. A wheelchair is in the center. An injured person is next to the wheelchair. A first aid kit is next to the injured person. A door is on the back wall. A window is on the left wall.
+There is a large table in the center of the room. A chair is in front of the table. A bookshelf is against the back wall. A door is on the left wall. A window is on the right wall.
+A small wardrobe is against the left wall. A bed is against the back wall. A nightstand is next to the bed. A door is on the right wall. There is debris in the center.
+There is a huge obstacle in the center. A victim is next to the obstacle. A door is on the back wall. A window is on the left wall. A first aid kit is on the right side.
+There is a door on the back wall. A large closet is against the left wall. A small desk is against the right wall. A chair is in front of the desk. A window is on the front wall.
+There is rubble in the center of the room. A broken wall is on the left side. A door is on the back wall. A window is on the right wall. A fire extinguisher is on the left side. An injured person is next to the rubble.
+There is a small sofa against the back wall. A tiny table is in front of the sofa. A door is on the left wall. A window is on the right wall. There is debris on the left side.
+There is a door on the back wall. A large bookshelf is against the left wall. An armchair is on the right side. A window is on the front wall. A small lamp is on the right side.
+A wheelchair is on the left side. An oxygen tank is next to the wheelchair. A stretcher is in the center. A door is on the back wall. A window is on the right wall.
+There is a huge bed against the back wall. A nightstand is next to the bed. A small lamp is on the nightstand. A wardrobe is against the left wall. A door is on the right wall.
+There is a collapsed table in the center. A chair is in front of the table. A door is on the back wall. A window is on the left wall. There is rubble next to the table. A fire extinguisher is on the right side.

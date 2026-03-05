@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>3D Emergency Scene</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        canvas { 
+            display: block; 
+            position: fixed;
+            top: 0;
+            left: 400px;  /* Panel genişliği kadar */
+            width: calc(100vw - 400px);  /* Ekranın geri kalanı */
+            height: 100vh;
+            z-index: 1;
+        }
+
+        /*        DASHBOARD             */
+
+        #controls {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+            background: linear-gradient(135deg, rgba(20, 30, 48, 0.98), rgba(36, 59, 85, 0.98));
+            box-shadow: 4px 0 30px rgba(0, 0, 0, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Scrollbar Styling */
+        #controls::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #controls::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        #controls::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        #controls::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Input Section */
+        .input-section {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .input-section h3 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        #sentence-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        #sentence-input:focus {
+            outline: none;
+            border-color: #3498db;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        #sentence-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        #btn-process {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        #btn-process:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        #btn-process:active {
+            transform: translateY(0);
+        }
+
+        #btn-process:disabled {
+            background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Dashboard Panel */
+        #assistant-panel {
+            padding: 20px;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-header h2 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
+        }
+
+        #status-badge {
+            padding: 6px 14px;
+            background: rgba(46, 204, 113, 0.2);
+            border: 1px solid #2ecc71;
+            border-radius: 20px;
+            color: #2ecc71;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Dashboard Cards */
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .dashboard-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .card-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .card-header h4 {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Table Styling */
+        .dashboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .dashboard-table thead tr {
+            background: rgba(52, 152, 219, 0.2);
+            border-bottom: 2px solid rgba(52, 152, 219, 0.5);
+        }
+
+        .dashboard-table th {
+            color: #3498db;
+            padding: 10px 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .dashboard-table td {
+            color: rgba(255, 255, 255, 0.85);
+            padding: 10px 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dashboard-table tbody tr {
+            transition: background 0.2s ease;
+        }
+
+        .dashboard-table tbody tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Exit Row Highlight */
+        .exit-row {
+            background: rgba(46, 204, 113, 0.15) !important;
+        }
+
+        .exit-row td {
+            color: #2ecc71 !important;
+            font-weight: 600;
+        }
+
+        .loading-text {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-style: italic;
+        }
+        /*           PATH METRICS STYLING               */
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .metric-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .metric-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(52, 152, 219, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .metric-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .metric-value {
+            color: #3498db;
+            font-size: 24px;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+        }
+
+        .metric-value.warning {
+            color: #e67e22;
+            text-shadow: 0 0 10px rgba(230, 126, 34, 0.3);
+        }
+
+        .metric-value.danger {
+            color: #e74c3c;
+            text-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
+            animation: pulse 1.5s infinite;
+        }
+        /* Alert Box */
+        .alert-box {
+            margin-top: 16px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            border-left: 4px solid;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Status Badge Animations */
+        #status-badge.scanning {
+            background: rgba(241, 196, 15, 0.2);
+            border-color: #f1c40f;
+            color: #f1c40f;
+            animation: pulse 1.5s infinite;
+        }
+
+        #status-badge.complete {
+            background: rgba(46, 204, 113, 0.2);
+            border-color: #2ecc71;
+            color: #2ecc71;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+    <!-- Input Panel -->
+    <div class="input-section">
+        <h3>🎙️ Scene Generator</h3>
+        <input type="text" id="sentence-input" placeholder="Describe the emergency scene...">
+        <button id="btn-process">🔍 Generate Scene</button>
+    </div>
+
+    <!-- Dashboard Panel -->
+    <div id="assistant-panel">
+            <div class="dashboard-header">
+                <h2>🚨 Emergency Analysis Dashboard</h2>
+                <div id="status-badge">● READY</div>
+            </div>
+
+            <!-- Exit Points Card -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <span class="card-icon">🚪</span>
+                    <h4>Exit Points</h4>
+                </div>
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Direction</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="exit-table-body"> 
+                        <tr><td colspan="3" class="loading-text">⏳ Waiting for scan...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Spatial Relations Card -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <span class="card-icon">🔗</span>
+                    <h4>Spatial Relations</h4>
+                </div>
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Object A</th>
+                            <th>Relation</th>
+                            <th>Object B</th>
+                        </tr>
+                    </thead>
+                    <tbody id="relation-table-body">
+                        <tr><td colspan="3" class="loading-text">⏳ Waiting for scan...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Path Metrics Card -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <span class="card-icon">📍</span>
+                    <h4>Path Metrics</h4>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-label">Distance to Exit</div>
+                        <div class="metric-value" id="distance-value">-- m</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Est. Time (Walking)</div>
+                        <div class="metric-value" id="time-walk">-- sec</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Est. Time (Running)</div>
+                        <div class="metric-value" id="time-run">-- sec</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Path Complexity</div>
+                        <div class="metric-value" id="path-complexity">--</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Obstacles Alert -->
+            <div id="obstacle-alert" class="alert-box"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/controls/OrbitControls.js"></script>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
