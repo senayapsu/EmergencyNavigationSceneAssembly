@@ -76,8 +76,6 @@ Open `http://localhost:8000` in the browser.
 
 ---
 
-## 🛠️ Tech Stack
-
 | Layer | Technology |
 |-------|-----------|
 | LLM | Qwen2.5-Coder-7B-Instruct  |
