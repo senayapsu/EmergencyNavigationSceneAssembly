@@ -1,0 +1,11 @@
+======================================================================
+  3D EMERGENCY SCENE GENERATOR — SESSION LOG
+  Başlangıç: 2026-03-05 13:54:05
+======================================================================
+
+
+[HATA] INPUT: "There is a bed against the back wall. A nightstand is next to the bed. A door is on the right wall. A chair is in front of the bed." → Error: Max retries reached
+
+
+[HATA] INPUT: "There is a bed against the back wall. A nightstand is next to the bed. A door is on the right wall. A chair is in front of the bed." → Error: Max retries reached
+

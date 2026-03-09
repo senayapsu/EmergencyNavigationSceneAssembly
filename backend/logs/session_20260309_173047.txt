@@ -1,0 +1,125 @@
+======================================================================
+  3D EMERGENCY SCENE GENERATOR — SESSION LOG
+  Başlangıç: 2026-03-09 17:30:47
+======================================================================
+
+
+======================================================================
+    INPUT  : "There is a window on the left"
+    Zaman  : 17:33:07
+======================================================================
+   LLM JSON OUTPUT:
+----------------------------------------------------------------------
+{
+  "assets": [
+    {
+      "id": "window_1",
+      "type": "window",
+      "placement_type": "wall",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "blocked"
+    }
+  ],
+  "relations": [
+    {
+      "source_id": "window_1",
+      "relation": "on_left_wall",
+      "target_id": "room"
+    }
+  ]
+}
+----------------------------------------------------------------------
+
+
+======================================================================
+    INPUT  : "There is a bed on the left"
+    Zaman  : 17:33:47
+======================================================================
+   LLM JSON OUTPUT:
+----------------------------------------------------------------------
+{
+  "assets": [
+    {
+      "id": "obj_1",
+      "type": "bed",
+      "placement_type": "floor",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "walkable_over"
+    }
+  ],
+  "relations": [
+    {
+      "source_id": "obj_1",
+      "relation": "left_of",
+      "target_id": "room"
+    }
+  ]
+}
+----------------------------------------------------------------------
+
+
+======================================================================
+    INPUT  : "There is a door in front of me"
+    Zaman  : 17:34:19
+======================================================================
+   LLM JSON OUTPUT:
+----------------------------------------------------------------------
+{
+  "assets": [
+    {
+      "id": "door_1",
+      "type": "door",
+      "placement_type": "wall",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "blocked"
+    }
+  ],
+  "relations": [
+    {
+      "source_id": "door_1",
+      "relation": "in_front_of",
+      "target_id": "room"
+    }
+  ]
+}
+----------------------------------------------------------------------
+
+
+======================================================================
+    INPUT  : "There is a wardrobe on the front wall"
+    Zaman  : 17:38:36
+======================================================================
+   LLM JSON OUTPUT:
+----------------------------------------------------------------------
+{
+  "assets": [
+    {
+      "id": "wall_1",
+      "type": "wall",
+      "placement_type": "wall",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "blocked"
+    },
+    {
+      "id": "wardrobe_1",
+      "type": "wardrobe",
+      "placement_type": "floor",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "blocked"
+    }
+  ],
+  "relations": [
+    {
+      "source_id": "wardrobe_1",
+      "relation": "on_front_wall",
+      "target_id": "wall_1"
+    }
+  ]
+}
+----------------------------------------------------------------------
+

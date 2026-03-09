@@ -12,7 +12,7 @@ QWEN_MODEL = "qwen2.5-coder:7b"
 
 # --- PERFORMANCE / REQUEST TUNING ---
 OLLAMA_NUM_PREDICT = int(os.getenv("OLLAMA_NUM_PREDICT", "2000"))
-OLLAMA_REQUEST_TIMEOUT = int(os.getenv("OLLAMA_REQUEST_TIMEOUT", "30"))
+OLLAMA_REQUEST_TIMEOUT = int(os.getenv("OLLAMA_REQUEST_TIMEOUT", "60"))
 
 # --- PYDANTIC SCHEMAS ---
 class Asset(BaseModel):
@@ -120,7 +120,7 @@ Output (JSON only):"""
             if "connection" in error_msg.lower():
                 print(f" Ollama'ya bağlanılamıyor! Uygulamanın açık olduğundan emin olun... ({attempt + 1}/{max_retries})")
                 import time
-                time.sleep(5)
+                time.sleep(10)
                 continue
             
             # Diğer hatalar
@@ -129,7 +129,7 @@ Output (JSON only):"""
                 if attempt == max_retries - 1:
                     raise Exception(f"Local API call failed after {max_retries} attempts: {error_msg}")
                 import time
-                time.sleep(2)
+                time.sleep(5)
     
     raise Exception("Max retries reached")
 

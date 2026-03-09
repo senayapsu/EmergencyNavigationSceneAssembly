@@ -1,0 +1,72 @@
+======================================================================
+  3D EMERGENCY SCENE GENERATOR — SESSION LOG
+  Başlangıç: 2026-03-05 14:10:51
+======================================================================
+
+
+======================================================================
+    INPUT  : "There is a bed against the back wall. A nightstand is next to the bed. A door is on the right wall. A chair is in front of the bed."
+    Zaman  : 14:11:42
+======================================================================
+   LLM JSON OUTPUT:
+----------------------------------------------------------------------
+{
+  "assets": [
+    {
+      "id": "bed_1",
+      "type": "bed",
+      "placement_type": "wall",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "blocked"
+    },
+    {
+      "id": "nightstand_1",
+      "type": "nightstand",
+      "placement_type": "floor",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "passable"
+    },
+    {
+      "id": "door_1",
+      "type": "door",
+      "placement_type": "wall",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "blocked"
+    },
+    {
+      "id": "chair_1",
+      "type": "chair",
+      "placement_type": "floor",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "passable"
+    }
+  ],
+  "relations": [
+    {
+      "source_id": "bed_1",
+      "relation": "on_back_wall",
+      "target_id": "room"
+    },
+    {
+      "source_id": "nightstand_1",
+      "relation": "next_to",
+      "target_id": "bed_1"
+    },
+    {
+      "source_id": "door_1",
+      "relation": "on_right_wall",
+      "target_id": "room"
+    },
+    {
+      "source_id": "chair_1",
+      "relation": "in_front_of",
+      "target_id": "bed_1"
+    }
+  ]
+}
+----------------------------------------------------------------------
+

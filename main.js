@@ -1015,8 +1015,10 @@ function drawEmergencyPath() {
     // 4. YOLLARI HESAPLA VE ÇİZ 
     let allPaths = [];
     allExits.forEach((exit, index) => {
-        const pathPoints = findPathBFS(startNode, exit, grid, gridSize);
         
+        //const pathPoints = findPathBFS(startNode, exit, grid, gridSize);
+        const pathPoints = findPathAStar(startNode, exit, grid, gridSize);
+
         if (pathPoints && pathPoints.length > 1) {
             const isShortest = (index === 0);
             const color = isShortest ? 0x00ff00 : 0xff0000;
@@ -1053,82 +1055,186 @@ function drawEmergencyPath() {
     }
 }
 
-function findPathBFS(startNode, endNode, grid, gridSize) {
-    let queue = [startNode];
-    let visited = Array(gridSize).fill().map(() => Array(gridSize).fill(false));
-    let parent = Array(gridSize).fill().map(() => Array(gridSize).fill(null));
+// function findPathBFS(startNode, endNode, grid, gridSize) {
+//     let queue = [startNode];
+//     let visited = Array(gridSize).fill().map(() => Array(gridSize).fill(false));
+//     let parent = Array(gridSize).fill().map(() => Array(gridSize).fill(null));
 
-    // Başlangıç kontrolü
-    if (startNode.x >= 0 && startNode.x < gridSize && startNode.y >= 0 && startNode.y < gridSize) {
-        visited[startNode.y][startNode.x] = true;
-    } else { return null; }
+//     // Başlangıç kontrolü
+//     if (startNode.x >= 0 && startNode.x < gridSize && startNode.y >= 0 && startNode.y < gridSize) {
+//         visited[startNode.y][startNode.x] = true;
+//     } else { return null; }
+
+//     const dx = [1, -1, 0, 0];
+//     const dy = [0, 0, 1, -1];
+//     let found = false;
+//     let finalNode = null;
+
+//     // BFS Algoritması
+//     while (queue.length > 0) {
+//         let current = queue.shift();
+
+//         // Hedefe ulaştı mı?
+//         if (Math.abs(current.x - endNode.x) <= 2 && Math.abs(current.y - endNode.y) <= 2) {
+//             finalNode = current;
+//             found = true;
+//             break;
+//         }
+
+//         for (let i = 0; i < 4; i++) {
+//             let nx = current.x + dx[i];
+//             let ny = current.y + dy[i];
+
+//             if (nx >= 0 && nx < gridSize && ny >= 0 && ny < gridSize) {
+//                 if (!visited[ny][nx] && grid[ny][nx] !== Infinity) {
+//                     visited[ny][nx] = true;
+//                     parent[ny][nx] = current;
+//                     queue.push({ x: nx, y: ny });
+//                 }
+//             }
+//         }
+//     }
+
+//     if (!found) return null;
+
+//     // 3D noktaları oluştur (Eğer walkable over olan bir objeden geçecekse
+//     const pathPoints = [];
+//     let curr = finalNode;
+//     const gridOffset = 10;
+
+//     // Hedef noktayı ekle
+//     if (endNode.targetHeight !== undefined) {
+//          pathPoints.push(new THREE.Vector3(
+//             curr.x - gridOffset, 
+//             endNode.targetHeight,
+//             curr.y - gridOffset
+//         ));
+//     }
+
+//     while (curr) {
+//         // Grid'deki  karenin yüksekliği alınır
+//         let obstacleHeight = grid[curr.y][curr.x];
+        
+    
+//         let drawHeight = obstacleHeight > 0 ? (obstacleHeight + 0.4) : 0.2;
+
+//         pathPoints.push(new THREE.Vector3(
+//             curr.x - gridOffset, 
+//             drawHeight, 
+//             curr.y - gridOffset
+//         ));
+
+//         curr = parent[curr.y][curr.x];
+//     }
+    
+//     return pathPoints.reverse();
+// }
+
+function findPathAStar(startNode, endNode, grid, gridSize) {
+    // --- SINIR KONTROLÜ ---
+    if (startNode.x < 0 || startNode.x >= gridSize || 
+        startNode.y < 0 || startNode.y >= gridSize) return null;
+
+    // --- HEURİSTİK: Manhattan mesafesi ---
+    function heuristic(a, b) {
+        return Math.abs(a.x - b.x) + Math.abs(a.y - b.y);
+    }
+
+    // --- VERİ YAPILARI ---
+    // gCost: başlangıçtan bu noktaya gerçek maliyet
+    // fCost: gCost + heuristic (tahmin)
+    const gCost = Array(gridSize).fill(null).map(() => Array(gridSize).fill(Infinity));
+    const parent = Array(gridSize).fill(null).map(() => Array(gridSize).fill(null));
+    const closed = Array(gridSize).fill(null).map(() => Array(gridSize).fill(false));
+
+    gCost[startNode.y][startNode.x] = 0;
+
+    // Open list: { x, y, f } objelerini tutar, f'ye göre sıralı
+    // Basit dizi olarak tutuyoruz, her adımda en düşük f'yi çekiyoruz
+    let openList = [{ 
+        x: startNode.x, 
+        y: startNode.y, 
+        f: heuristic(startNode, endNode) 
+    }];
 
     const dx = [1, -1, 0, 0];
     const dy = [0, 0, 1, -1];
+
     let found = false;
     let finalNode = null;
 
-    // BFS Algoritması
-    while (queue.length > 0) {
-        let current = queue.shift();
+    // --- A* ANA DÖNGÜSÜ ---
+    while (openList.length > 0) {
+        // En düşük f değerli düğümü seç
+        openList.sort((a, b) => a.f - b.f);
+        const current = openList.shift();
 
-        // Hedefe ulaştı mı?
-        if (Math.abs(current.x - endNode.x) <= 2 && Math.abs(current.y - endNode.y) <= 2) {
+        // Zaten işlendiyse geç
+        if (closed[current.y][current.x]) continue;
+        closed[current.y][current.x] = true;
+
+        // Hedefe ulaştık mı?
+        if (Math.abs(current.x - endNode.x) <= 2 && 
+            Math.abs(current.y - endNode.y) <= 2) {
             finalNode = current;
             found = true;
             break;
         }
 
+        // --- KOMŞULARI İŞLE ---
         for (let i = 0; i < 4; i++) {
-            let nx = current.x + dx[i];
-            let ny = current.y + dy[i];
+            const nx = current.x + dx[i];
+            const ny = current.y + dy[i];
 
-            if (nx >= 0 && nx < gridSize && ny >= 0 && ny < gridSize) {
-                if (!visited[ny][nx] && grid[ny][nx] !== Infinity) {
-                    visited[ny][nx] = true;
-                    parent[ny][nx] = current;
-                    queue.push({ x: nx, y: ny });
-                }
+            if (nx < 0 || nx >= gridSize || ny < 0 || ny >= gridSize) continue;
+            if (closed[ny][nx]) continue;
+            if (grid[ny][nx] === Infinity) continue; // Engel
+
+            const newG = gCost[current.y][current.x] + 1;
+
+            if (newG < gCost[ny][nx]) {
+                gCost[ny][nx] = newG;
+                parent[ny][nx] = current;
+                const f = newG + heuristic({ x: nx, y: ny }, endNode);
+                openList.push({ x: nx, y: ny, f: f });
             }
         }
     }
 
     if (!found) return null;
 
-    // 3D noktaları oluştur (Eğer walkable over olan bir objeden geçecekse
+    // --- 3D NOKTALARI OLUŞTUR (BFS ile aynı mantık korundu) ---
     const pathPoints = [];
     let curr = finalNode;
     const gridOffset = 10;
 
-    // Hedef noktayı ekle
     if (endNode.targetHeight !== undefined) {
-         pathPoints.push(new THREE.Vector3(
-            curr.x - gridOffset, 
+        pathPoints.push(new THREE.Vector3(
+            curr.x - gridOffset,
             endNode.targetHeight,
             curr.y - gridOffset
         ));
     }
 
     while (curr) {
-        // Grid'deki  karenin yüksekliği alınır
         let obstacleHeight = grid[curr.y][curr.x];
-        
-    
         let drawHeight = obstacleHeight > 0 ? (obstacleHeight + 0.4) : 0.2;
 
         pathPoints.push(new THREE.Vector3(
-            curr.x - gridOffset, 
-            drawHeight, 
+            curr.x - gridOffset,
+            drawHeight,
             curr.y - gridOffset
         ));
 
         curr = parent[curr.y][curr.x];
     }
-    
+
     return pathPoints.reverse();
 }
 
-// Yolun toplam mesafesini hesapla
+/*
+Yolun toplam mesafesini hesapla
+*/
 function calculatePathDistance(pathPoints) {
     let total = 0;
     for (let i = 0; i < pathPoints.length - 1; i++) {

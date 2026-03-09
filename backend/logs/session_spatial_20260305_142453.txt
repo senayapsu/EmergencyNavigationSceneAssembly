@@ -1,0 +1,66 @@
+======================================================================
+  3D EMERGENCY SCENE GENERATOR — SPATIAL SESSION LOG
+  Başlangıç: 2026-03-05 14:24:53
+======================================================================
+
+
+======================================================================
+    INPUT  : "There is a bed on the right. A nightstand is next to the bed. A door is on the right wall. A chair is on the left"
+    Zaman  : 14:25:30
+======================================================================
+   LLM JSON OUTPUT:
+----------------------------------------------------------------------
+{
+  "assets": [
+    {
+      "id": "obj_1",
+      "type": "bed",
+      "placement_type": "floor",
+      "attributes": [],
+      "scale_modifier": 1,
+      "traversability": "walkable_over"
+    },
+    {
+      "id": "obj_2",
+      "type": "nightstand",
+      "placement_type": "floor",
+      "attributes": [],
+      "scale_modifier": 1,
+      "traversability": "blocked"
+    },
+    {
+      "id": "wall_1",
+      "type": "door",
+      "placement_type": "wall",
+      "attributes": [],
+      "scale_modifier": 1,
+      "traversability": "blocked"
+    },
+    {
+      "id": "obj_3",
+      "type": "chair",
+      "placement_type": "floor",
+      "attributes": [],
+      "scale_modifier": 1,
+      "traversability": "passable"
+    }
+  ],
+  "relations": [
+    {
+      "source_id": "obj_2",
+      "relation": "next_to",
+      "target_id": "obj_1"
+    },
+    {
+      "source_id": "wall_1",
+      "relation": "on_right_wall",
+      "target_id": "room"
+    },
+    {
+      "source_id": "obj_3",
+      "relation": "on_left_of",
+      "target_id": "obj_1"
+    }
+  ]
+}
+----------------------------------------------------------------------
