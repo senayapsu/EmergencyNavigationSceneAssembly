@@ -941,9 +941,11 @@ function placeAssetInScene(asset, allRelations, sceneData) {
 function drawEmergencyPath() {
     console.log(" Emergency Path Hesaplanıyor...");
 
-    const gridSize = 20;
-    const gridOffset = 10;
-    
+    // const gridSize = 20;
+    // const gridOffset = 10;
+    const gridSize = 64;
+    const cellSize = 20 / gridSize; // Her hücre yaklaşık 0.3125 Three.js birimi 
+
     if (window.emergencyLines && window.emergencyLines.length > 0) {
         window.emergencyLines.forEach(line => scene.remove(line));
         window.emergencyLines = [];
@@ -954,9 +956,13 @@ function drawEmergencyPath() {
     let startNode = null;
     scene.children.forEach(obj => {
         if (obj.userData && obj.userData.isUser) {
+            // startNode = { 
+            //     x: Math.floor(obj.position.x + gridOffset), 
+            //     y: Math.floor(obj.position.z + gridOffset) 
+            // };
             startNode = { 
-                x: Math.floor(obj.position.x + gridOffset), 
-                y: Math.floor(obj.position.z + gridOffset) 
+                x: Math.floor((obj.position.x + 10) / cellSize), 
+                y: Math.floor((obj.position.z + 10) / cellSize) 
             };
         }
     });
@@ -966,12 +972,18 @@ function drawEmergencyPath() {
     let allExits = [];
     scene.children.forEach(obj => {
         if (obj.userData && obj.userData.isExit) {
-            const gx = Math.floor(obj.position.x + gridOffset);
-            const gz = Math.floor(obj.position.z + gridOffset);
+            // const gx = Math.floor(obj.position.x + gridOffset);
+            // const gz = Math.floor(obj.position.z + gridOffset);
+            // allExits.push({ 
+            //     x: Math.max(0, Math.min(gridSize - 1, gx)), 
+            //     y: Math.max(0, Math.min(gridSize - 1, gz)), 
+            const gx = Math.floor((obj.position.x + 10) / cellSize);
+            const gz = Math.floor((obj.position.z + 10) / cellSize);
+            const isDoor = obj.userData.type && obj.userData.type.includes("door");
             allExits.push({ 
                 x: Math.max(0, Math.min(gridSize - 1, gx)), 
-                y: Math.max(0, Math.min(gridSize - 1, gz)), 
-                targetHeight: obj.position.y, // Hedefin (pencerenin) yüksekliği
+                y: Math.max(0, Math.min(gridSize - 1, gz)),
+                targetHeight: isDoor ? 0.2 : obj.position.y,  // Kapıda yerden geç, pencerede yüksekliğine kadar çık 
                 object: obj 
             });
         }
@@ -987,10 +999,14 @@ function drawEmergencyPath() {
             const box = new THREE.Box3().setFromObject(obj);
             const height = box.max.y; // Objenin yerden en tepe noktası
             
-            const minX = Math.floor(box.min.x + gridOffset);
-            const maxX = Math.floor(box.max.x + gridOffset);
-            const minZ = Math.floor(box.min.z + gridOffset);
-            const maxZ = Math.floor(box.max.z + gridOffset);
+            // const minX = Math.floor(box.min.x + gridOffset);
+            // const maxX = Math.floor(box.max.x + gridOffset);
+            // const minZ = Math.floor(box.min.z + gridOffset);
+            // const maxZ = Math.floor(box.max.z + gridOffset);
+            const minX = Math.floor((box.min.x + 10) / cellSize);
+            const maxX = Math.floor((box.max.x + 10) / cellSize);
+            const minZ = Math.floor((box.min.z + 10) / cellSize);
+            const maxZ = Math.floor((box.max.z + 10) / cellSize);
 
             for (let x = minX; x <= maxX; x++) {
                 for (let z = minZ; z <= maxZ; z++) {
@@ -1012,46 +1028,71 @@ function drawEmergencyPath() {
         }
     });
 
+    // Engellere 2 hücre tampon ekle (insan genişliği yaklaşık 60cm = 4 hücre, minimum buffer 2 olacak şekilde)
+    inflateObstacles(grid, gridSize, 2);
+
     // 4. YOLLARI HESAPLA VE ÇİZ 
     let allPaths = [];
-    allExits.forEach((exit, index) => {
-        
-        //const pathPoints = findPathBFS(startNode, exit, grid, gridSize);
-        const pathPoints = findPathAStar(startNode, exit, grid, gridSize);
-
+    allExits.forEach((exit) => {
+        const pathPoints = findPathAStar(startNode, exit, grid, gridSize, cellSize);
         if (pathPoints && pathPoints.length > 1) {
-            const isShortest = (index === 0);
-            const color = isShortest ? 0x00ff00 : 0xff0000;
-            const radius = isShortest ? 0.15 : 0.08; // Çizgi kalınlığı
-
-            const curve = new THREE.CatmullRomCurve3(pathPoints);
-            
-            const geometry = new THREE.TubeGeometry(curve, pathPoints.length * 8, radius, 8, false);
-            
-            const material = new THREE.MeshStandardMaterial({ 
-                color: color, 
-                emissive: color,
-                emissiveIntensity: 0.6,
-                roughness: 0.3,
-                metalness: 0.1
+            allPaths.push({ 
+                points: pathPoints, 
+                distance: calculatePathDistance(pathPoints) 
             });
-            
-            const tube = new THREE.Mesh(geometry, material);
-            scene.add(tube);
-            window.emergencyLines.push(tube);
-
-            allPaths.push({ points: pathPoints, distance: calculatePathDistance(pathPoints) });
         }
     });
 
-    // Dashboard güncellemesi için veriyi kaydet
+    // Mesafeye göre sırala — en kısa önce
+    allPaths.sort((a, b) => a.distance - b.distance);
+
+    // Sıralandıktan sonra çiz — index 0 artık gerçekten en kısa
+    allPaths.forEach((path, index) => {
+        const isShortest = (index === 0);
+        const color = isShortest ? 0x00ff00 : 0xff0000;
+        const radius = isShortest ? 0.15 : 0.08;
+
+        const curve = new THREE.CatmullRomCurve3(path.points);
+        const geometry = new THREE.TubeGeometry(curve, path.points.length * 8, radius, 8, false);
+        const material = new THREE.MeshStandardMaterial({ 
+            color: color, 
+            emissive: color,
+            emissiveIntensity: 0.6,
+            roughness: 0.3,
+            metalness: 0.1
+        });
+        
+        const tube = new THREE.Mesh(geometry, material);
+        scene.add(tube);
+        window.emergencyLines.push(tube);
+    });
+
+    // Dashboard için en kısa yolun metriklerini kaydet
     if (allPaths.length > 0) {
-        allPaths.sort((a, b) => a.distance - b.distance);
         window.pathMetrics = {
             distance: (allPaths[0].distance * 0.25).toFixed(1),
             steps: allPaths[0].points.length,
             complexity: calculatePathComplexity(allPaths[0].points)
         };
+    }
+}
+
+function inflateObstacles(grid, gridSize, radius) {
+    const original = grid.map(row => [...row]);
+    for (let z = 0; z < gridSize; z++) {
+        for (let x = 0; x < gridSize; x++) {
+            if (original[z][x] === Infinity) {
+                for (let dz = -radius; dz <= radius; dz++) {
+                    for (let dx = -radius; dx <= radius; dx++) {
+                        const nz = z + dz;
+                        const nx = x + dx;
+                        if (nz >= 0 && nz < gridSize && nx >= 0 && nx < gridSize) {
+                            grid[nz][nx] = Infinity;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -1130,7 +1171,7 @@ function drawEmergencyPath() {
 //     return pathPoints.reverse();
 // }
 
-function findPathAStar(startNode, endNode, grid, gridSize) {
+function findPathAStar(startNode, endNode, grid, gridSize, cellSize) {
     // --- SINIR KONTROLÜ ---
     if (startNode.x < 0 || startNode.x >= gridSize || 
         startNode.y < 0 || startNode.y >= gridSize) return null;
@@ -1210,9 +1251,9 @@ function findPathAStar(startNode, endNode, grid, gridSize) {
 
     if (endNode.targetHeight !== undefined) {
         pathPoints.push(new THREE.Vector3(
-            curr.x - gridOffset,
+            (curr.x * cellSize) - 10,
             endNode.targetHeight,
-            curr.y - gridOffset
+            (curr.y * cellSize) - 10
         ));
     }
 
@@ -1221,9 +1262,9 @@ function findPathAStar(startNode, endNode, grid, gridSize) {
         let drawHeight = obstacleHeight > 0 ? (obstacleHeight + 0.4) : 0.2;
 
         pathPoints.push(new THREE.Vector3(
-            curr.x - gridOffset,
+            (curr.x * cellSize) - 10,
             drawHeight,
-            curr.y - gridOffset
+            (curr.y * cellSize) - 10
         ));
 
         curr = parent[curr.y][curr.x];
