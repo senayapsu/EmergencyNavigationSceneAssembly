@@ -1,0 +1,59 @@
+======================================================================
+  3D EMERGENCY SCENE GENERATOR — SESSION LOG
+  Başlangıç: 2026-03-11 16:05:04
+======================================================================
+
+
+======================================================================
+    INPUT  : "There is a window on the left. There is a bed on the left. There is a door in front of me"
+    Zaman  : 16:07:18
+======================================================================
+   LLM JSON OUTPUT:
+----------------------------------------------------------------------
+{
+  "assets": [
+    {
+      "id": "window_1",
+      "type": "window",
+      "placement_type": "wall",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "blocked"
+    },
+    {
+      "id": "bed_1",
+      "type": "bed",
+      "placement_type": "floor",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "walkable_over"
+    },
+    {
+      "id": "door_1",
+      "type": "door",
+      "placement_type": "wall",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "blocked"
+    }
+  ],
+  "relations": [
+    {
+      "source_id": "window_1",
+      "relation": "on_left_wall",
+      "target_id": "room"
+    },
+    {
+      "source_id": "bed_1",
+      "relation": "left_of",
+      "target_id": "window_1"
+    },
+    {
+      "source_id": "door_1",
+      "relation": "in_front_of",
+      "target_id": "room"
+    }
+  ]
+}
+----------------------------------------------------------------------
+

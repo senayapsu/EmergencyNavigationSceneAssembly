@@ -1,5 +1,5 @@
 '''
-Texti alip parse eden modüldür. Qwen modelini çağirarak ona komut verip parse eder. Sonucu json objesi halinde döner.
+Texti alip parse eden modüldür. Qwen modelini çağirarak ona komut verip parse eder. Sonucu json objesi halinde döner. parser_module.py
 '''
 import os
 import json
@@ -11,7 +11,7 @@ from pydantic import BaseModel, Field
 QWEN_MODEL = "qwen2.5-coder:7b" 
 
 # --- PERFORMANCE / REQUEST TUNING ---
-OLLAMA_NUM_PREDICT = int(os.getenv("OLLAMA_NUM_PREDICT", "2000"))
+OLLAMA_NUM_PREDICT = int(os.getenv("OLLAMA_NUM_PREDICT", "1000"))
 OLLAMA_REQUEST_TIMEOUT = int(os.getenv("OLLAMA_REQUEST_TIMEOUT", "60"))
 
 # --- PYDANTIC SCHEMAS ---
@@ -77,11 +77,11 @@ def call_qwen_api(input_text, max_retries=3):
     # USER MESSAGE (Görev)
     user_message = f"""Parse this emergency scene into JSON following this exact schema:
 
-{schema_json}
+    {schema_json}
 
-Scene: "{input_text}"
+    Scene: "{input_text}"
 
-Output (JSON only):"""
+    Output (JSON only):"""
 
     import time
     for attempt in range(max_retries):
@@ -99,10 +99,11 @@ Output (JSON only):"""
                         {"role": "user", "content": user_message}
                     ],
                     "stream": False,
-                    "format": "json", 
+                    "format": "json",
+                    "keep_alive": "30m", 
                     "options": {
                         "temperature": 0.1,
-                        "num_predict": OLLAMA_NUM_PREDICT
+                        "num_predict": OLLAMA_NUM_PREDICT   
                     }
                 },
                 timeout=OLLAMA_REQUEST_TIMEOUT,

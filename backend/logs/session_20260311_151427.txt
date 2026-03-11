@@ -1,0 +1,14 @@
+======================================================================
+  3D EMERGENCY SCENE GENERATOR — SESSION LOG
+  Başlangıç: 2026-03-11 15:14:27
+======================================================================
+
+
+[HATA] INPUT: "There is a window on the left" → Error: 2 validation errors for SceneGraph
+assets
+  Field required [type=missing, input_value={'$defs': {'Asset': {'pro...raph', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+relations
+  Field required [type=missing, input_value={'$defs': {'Asset': {'pro...raph', 'type': 'object'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+

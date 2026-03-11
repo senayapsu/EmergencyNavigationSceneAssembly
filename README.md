@@ -74,6 +74,12 @@ python3 -m http.server
 ```
 Open `http://localhost:8000` in the browser.
 
+### 5. Make sure that Ollama runs
+```bash
+# From the terminal
+ollama serve &
+```
+
 ---
 
 | Layer | Technology |
