@@ -222,7 +222,7 @@ def compare_scenario(ref: dict, actual: dict) -> dict:
         "tra_correct": tra_correct,  "tra_total": tra_total,  "tra": round(tra_score, 3),
         "sca_correct": sca_correct,  "sca_total": sca_total,  "sca": round(sca_score, 3),
         "ra_correct":  ra_correct,   "ra_total":  ra_total,   "ra":  round(ra_score,  3),
-        "overall": round((oea_score + pta_score + tra_score + ra_score) / 4, 3)
+        "overall": round((oea_score + pta_score + sca_score + tra_score + ra_score) / 5, 3)
     }
 
 

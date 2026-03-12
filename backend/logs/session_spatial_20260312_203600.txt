@@ -1,14 +1,14 @@
 ======================================================================
-  3D EMERGENCY SCENE GENERATOR — SESSION LOG
-  Başlangıç: 2026-03-02 14:51:05
+  3D EMERGENCY SCENE GENERATOR — SPATIAL SESSION LOG
+  Başlangıç: 2026-03-12 20:36:00
 ======================================================================
 
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the left wall. A chair is in the center of the room."
-  🕐  Zaman  : 14:52:34
+ INPUT  : "There is a window on the left wall. A chair is in the center of the room."
+ Zaman  : 20:36:22
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -26,7 +26,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     }
   ],
   "relations": [
@@ -45,18 +45,28 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. A table is in the center of the room."
-  🕐  Zaman  : 14:52:59
+ INPUT  : "There is a door on the back wall. A table is in the center of the room."
+ Zaman  : 20:36:53
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
+      "id": "wall_1",
+      "type": "wall",
+      "placement_type": "wall",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "blocked"
+    },
+    {
       "id": "door_1",
       "type": "door",
       "placement_type": "wall",
-      "attributes": [],
+      "attributes": [
+        "open"
+      ],
       "scale_modifier": 1.0,
       "traversability": "blocked"
     },
@@ -66,14 +76,14 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     }
   ],
   "relations": [
     {
       "source_id": "door_1",
       "relation": "on_back_wall",
-      "target_id": "room"
+      "target_id": "wall_1"
     },
     {
       "source_id": "table_1",
@@ -85,10 +95,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the right wall. A sofa is against the left wall."
-  🕐  Zaman  : 14:53:24
+ INPUT  : "There is a window on the right wall. A sofa is against the left wall."
+ Zaman  : 20:37:18
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -117,18 +127,18 @@
     },
     {
       "source_id": "sofa_1",
-      "relation": "in_front_of",
-      "target_id": "wall_1"
+      "relation": "on_left_wall",
+      "target_id": "room"
     }
   ]
 }
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the right wall. A bed is against the back wall."
-  🕐  Zaman  : 14:53:49
+ INPUT  : "There is a door on the right wall. A bed is against the back wall."
+ Zaman  : 20:37:43
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -165,10 +175,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the back wall. A closet is on the left side of the room."
-  🕐  Zaman  : 14:54:21
+ INPUT  : "There is a window on the back wall. A closet is on the left side of the room."
+ Zaman  : 20:38:14
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -186,7 +196,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "closet_1",
@@ -213,10 +223,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the left wall. An armchair is in the center of the room."
-  🕐  Zaman  : 14:54:46
+ INPUT  : "There is a door on the left wall. An armchair is in the center of the room."
+ Zaman  : 20:38:39
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -232,10 +242,8 @@
       "id": "armchair_1",
       "type": "sofa",
       "placement_type": "floor",
-      "attributes": [
-        "large"
-      ],
-      "scale_modifier": 1.5,
+      "attributes": [],
+      "scale_modifier": 1.0,
       "traversability": "walkable_over"
     }
   ],
@@ -247,7 +255,7 @@
     },
     {
       "source_id": "armchair_1",
-      "relation": "in_center",
+      "relation": "behind",
       "target_id": "room"
     }
   ]
@@ -255,10 +263,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the front wall. A desk is against the right wall."
-  🕐  Zaman  : 14:55:11
+ INPUT  : "There is a window on the front wall. A desk is against the right wall."
+ Zaman  : 20:39:03
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -273,10 +281,10 @@
     {
       "id": "desk_1",
       "type": "desk",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -287,18 +295,18 @@
     },
     {
       "source_id": "desk_1",
-      "relation": "on_right_wall",
-      "target_id": "room"
+      "relation": "right_of",
+      "target_id": "wall_1"
     }
   ]
 }
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. A bookshelf is against the left wall."
-  🕐  Zaman  : 14:55:36
+ INPUT  : "There is a door on the back wall. A bookshelf is against the left wall."
+ Zaman  : 20:39:29
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -313,10 +321,10 @@
     {
       "id": "bookshelf_1",
       "type": "bookshelf",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -335,10 +343,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the right wall. A nightstand is in the center of the room."
-  🕐  Zaman  : 14:56:01
+ INPUT  : "There is a window on the right wall. A nightstand is in the center of the room."
+ Zaman  : 20:39:53
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -356,7 +364,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -375,10 +383,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the left wall. A wardrobe is against the right wall."
-  🕐  Zaman  : 14:56:26
+ INPUT  : "There is a door on the left wall. A wardrobe is against the right wall."
+ Zaman  : 20:40:18
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -393,7 +401,7 @@
     {
       "id": "wardrobe_1",
       "type": "wardrobe",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "blocked"
@@ -415,10 +423,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the back wall. A fire extinguisher is on the left side of the room."
-  🕐  Zaman  : 14:56:52
+ INPUT  : "There is a window on the back wall. A fire extinguisher is on the left side of the room."
+ Zaman  : 20:40:44
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -455,10 +463,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the right wall. A TV is against the back wall."
-  🕐  Zaman  : 14:57:17
+ INPUT  : "There is a door on the right wall. A TV is against the back wall."
+ Zaman  : 20:41:08
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -473,10 +481,10 @@
     {
       "id": "tv_1",
       "type": "tv",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -495,10 +503,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the left wall. An injured person is lying in the center of the room."
-  🕐  Zaman  : 14:57:42
+ INPUT  : "There is a window on the left wall. An injured person is lying in the center of the room."
+ Zaman  : 20:41:33
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -518,7 +526,7 @@
         "injured"
       ],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "passable"
     }
   ],
   "relations": [
@@ -537,10 +545,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. There is rubble on the right side of the room."
-  🕐  Zaman  : 14:58:07
+ INPUT  : "There is a door on the back wall. There is rubble on the right side of the room."
+ Zaman  : 20:41:58
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -579,10 +587,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the back wall. A chair is on the left side of the room."
-  🕐  Zaman  : 14:58:32
+ INPUT  : "There is a window on the back wall. A chair is on the left side of the room."
+ Zaman  : 20:42:22
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -600,7 +608,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     }
   ],
   "relations": [
@@ -619,17 +627,17 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a large bed against the back wall. A window is on the right wall."
-  🕐  Zaman  : 14:58:57
+ INPUT  : "There is a large bed against the back wall. A window is on the right wall."
+ Zaman  : 20:42:47
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "bed_1",
       "type": "bed",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [
         "large"
       ],
@@ -661,10 +669,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A small chair is on the left side of the room. A door is on the back wall."
-  🕐  Zaman  : 14:59:22
+ INPUT  : "A small chair is on the left side of the room. A door is on the back wall."
+ Zaman  : 20:43:12
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -703,17 +711,17 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a huge wardrobe on the right side. A window is on the front wall."
-  🕐  Zaman  : 14:59:47
+ INPUT  : "There is a huge wardrobe on the right side. A window is on the front wall."
+ Zaman  : 20:43:37
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "obj_1",
       "type": "wardrobe",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [
         "huge"
       ],
@@ -726,7 +734,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -745,13 +753,21 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the left wall. A collapsed bookshelf is on the right side."
-  🕐  Zaman  : 15:00:13
+ INPUT  : "There is a door on the left wall. A collapsed bookshelf is on the right side."
+ Zaman  : 20:44:08
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
+    {
+      "id": "wall_1",
+      "type": "wall",
+      "placement_type": "wall",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "blocked"
+    },
     {
       "id": "door_1",
       "type": "door",
@@ -775,7 +791,7 @@
     {
       "source_id": "door_1",
       "relation": "on_left_wall",
-      "target_id": "room"
+      "target_id": "wall_1"
     },
     {
       "source_id": "bookshelf_1",
@@ -787,10 +803,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A victim is lying in the center of the room. A door is on the right wall."
-  🕐  Zaman  : 15:00:43
+ INPUT  : "A victim is lying in the center of the room. A door is on the right wall."
+ Zaman  : 20:44:38
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -810,7 +826,7 @@
         "injured"
       ],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "passable"
     },
     {
       "id": "door",
@@ -818,7 +834,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -837,10 +853,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a tiny lamp on the right side of the room. A door is on the back wall."
-  🕐  Zaman  : 15:01:07
+ INPUT  : "There is a tiny lamp on the right side of the room. A door is on the back wall."
+ Zaman  : 20:45:03
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -852,7 +868,7 @@
         "tiny"
       ],
       "scale_modifier": 0.5,
-      "traversability": "blocked"
+      "traversability": "passable"
     },
     {
       "id": "wall_1",
@@ -860,7 +876,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -879,17 +895,17 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a couch against the right wall. A window is on the left wall."
-  🕐  Zaman  : 15:01:32
+ INPUT  : "There is a couch against the right wall. A window is on the left wall."
+ Zaman  : 20:45:28
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "couch_1",
       "type": "sofa",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "walkable_over"
@@ -919,10 +935,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A wheelchair is in the center of the room. A door is on the front wall."
-  🕐  Zaman  : 15:02:02
+ INPUT  : "A wheelchair is in the center of the room. A door is on the front wall."
+ Zaman  : 20:45:58
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -940,7 +956,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     },
     {
       "id": "door",
@@ -948,7 +964,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -967,10 +983,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the right wall. A stretcher is on the left side of the room."
-  🕐  Zaman  : 15:02:27
+ INPUT  : "There is a door on the right wall. A stretcher is on the left side of the room."
+ Zaman  : 20:46:23
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -988,7 +1004,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -1007,28 +1023,20 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the back wall. A big table is against the left wall."
-  🕐  Zaman  : 15:03:02
+ INPUT  : "There is a window on the back wall. A big table is against the left wall."
+ Zaman  : 20:46:48
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
-    {
-      "id": "wall_1",
-      "type": "wall",
-      "placement_type": "wall",
-      "attributes": [],
-      "scale_modifier": 1.0,
-      "traversability": "blocked"
-    },
     {
       "id": "window_1",
       "type": "window",
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "table_1",
@@ -1038,29 +1046,29 @@
         "big"
       ],
       "scale_modifier": 1.5,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     }
   ],
   "relations": [
     {
       "source_id": "window_1",
       "relation": "on_back_wall",
-      "target_id": "wall_1"
+      "target_id": "room"
     },
     {
       "source_id": "table_1",
       "relation": "on_left_wall",
-      "target_id": "wall_1"
+      "target_id": "room"
     }
   ]
 }
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A door is on the right wall. An obstacle is in the center of the room."
-  🕐  Zaman  : 15:03:27
+ INPUT  : "A door is on the right wall. An obstacle is in the center of the room."
+ Zaman  : 20:47:14
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -1099,10 +1107,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the back wall. There is debris on the right side of the room."
-  🕐  Zaman  : 15:03:58
+ INPUT  : "There is a window on the back wall. There is debris on the right side of the room."
+ Zaman  : 20:47:45
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -1120,7 +1128,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "debris_1",
@@ -1149,10 +1157,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the front wall. A large sofa is against the back wall."
-  🕐  Zaman  : 15:04:24
+ INPUT  : "There is a door on the front wall. A large sofa is against the back wall."
+ Zaman  : 20:48:10
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -1191,10 +1199,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A concrete block is on the left side of the room. A door is on the back wall."
-  🕐  Zaman  : 15:04:48
+ INPUT  : "A concrete block is on the left side of the room. A door is on the back wall."
+ Zaman  : 20:48:35
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -1210,9 +1218,11 @@
       "id": "wall_1",
       "type": "door",
       "placement_type": "wall",
-      "attributes": [],
+      "attributes": [
+        "open"
+      ],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -1231,10 +1241,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the right wall. A person is in the center of the room."
-  🕐  Zaman  : 15:05:13
+ INPUT  : "There is a window on the right wall. A person is in the center of the room."
+ Zaman  : 20:49:00
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -1252,7 +1262,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     }
   ],
   "relations": [
@@ -1271,33 +1281,25 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a small desk on the right side of the room. A window is on the back wall."
-  🕐  Zaman  : 15:05:43
+ INPUT  : "There is a small desk on the right side of the room. A window is on the back wall."
+ Zaman  : 20:49:25
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
-      "id": "room",
-      "type": "room",
-      "placement_type": "wall",
-      "attributes": [],
-      "scale_modifier": 1.0,
-      "traversability": "blocked"
-    },
-    {
-      "id": "desk",
+      "id": "desk_1",
       "type": "desk",
       "placement_type": "floor",
       "attributes": [
         "small"
       ],
       "scale_modifier": 0.7,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
-      "id": "window",
+      "id": "window_1",
       "type": "window",
       "placement_type": "wall",
       "attributes": [],
@@ -1307,12 +1309,12 @@
   ],
   "relations": [
     {
-      "source_id": "desk",
+      "source_id": "desk_1",
       "relation": "right_of",
       "target_id": "room"
     },
     {
-      "source_id": "window",
+      "source_id": "window_1",
       "relation": "on_back_wall",
       "target_id": "room"
     }
@@ -1321,10 +1323,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A broken wall segment is on the right side. A door is on the left wall."
-  🕐  Zaman  : 15:06:09
+ INPUT  : "A broken wall segment is on the right side. A door is on the left wall."
+ Zaman  : 20:49:50
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -1344,7 +1346,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -1363,10 +1365,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. A huge closet is against the right wall."
-  🕐  Zaman  : 15:06:34
+ INPUT  : "There is a door on the back wall. A huge closet is against the right wall."
+ Zaman  : 20:50:15
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -1383,7 +1385,7 @@
     {
       "id": "closet_1",
       "type": "closet",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [
         "huge"
       ],
@@ -1407,10 +1409,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the left wall. A first aid kit is in the center of the room."
-  🕐  Zaman  : 15:07:00
+ INPUT  : "There is a window on the left wall. A first aid kit is in the center of the room."
+ Zaman  : 20:50:40
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -1447,28 +1449,20 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. A large armchair is on the left side of the room."
-  🕐  Zaman  : 15:07:31
+ INPUT  : "There is a door on the back wall. A large armchair is on the left side of the room."
+ Zaman  : 20:51:06
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
-    {
-      "id": "wall_1",
-      "type": "wall",
-      "placement_type": "wall",
-      "attributes": [],
-      "scale_modifier": 1.0,
-      "traversability": "blocked"
-    },
     {
       "id": "door_1",
       "type": "door",
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "armchair_1",
@@ -1485,7 +1479,7 @@
     {
       "source_id": "door_1",
       "relation": "on_back_wall",
-      "target_id": "wall_1"
+      "target_id": "room"
     },
     {
       "source_id": "armchair_1",
@@ -1497,20 +1491,20 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a bed against the back wall. A nightstand is next to the bed. A door is on the right wall. A chair is in front of the bed."
-  🕐  Zaman  : 15:08:16
+ INPUT  : "There is a bed against the back wall. A nightstand is next to the bed. A door is on the right wall. A chair is in front of the bed."
+ Zaman  : 20:52:03
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "bed_1",
       "type": "bed",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "walkable_over"
     },
     {
       "id": "nightstand_1",
@@ -1518,7 +1512,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "door_1",
@@ -1534,7 +1528,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     }
   ],
   "relations": [
@@ -1563,17 +1557,17 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a sofa against the back wall. A table is in the center of the room. A window is on the left wall. A chair is next to the table."
-  🕐  Zaman  : 15:08:59
+ INPUT  : "There is a sofa against the back wall. A table is in the center of the room. A window is on the left wall. A chair is next to the table."
+ Zaman  : 20:52:59
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "sofa",
       "type": "sofa",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "walkable_over"
@@ -1584,7 +1578,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "window",
@@ -1629,10 +1623,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. There is a window on the right wall. A table is in the center. A chair is next to the table."
-  🕐  Zaman  : 15:09:41
+ INPUT  : "There is a door on the back wall. There is a window on the right wall. A table is in the center. A chair is next to the table."
+ Zaman  : 20:53:53
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -1658,7 +1652,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "chair",
@@ -1695,17 +1689,17 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a desk against the left wall. A chair is in front of the desk. There is rubble in the center of the room. A door is on the right wall."
-  🕐  Zaman  : 15:10:24
+ INPUT  : "There is a desk against the left wall. A chair is in front of the desk. There is rubble in the center of the room. A door is on the right wall."
+ Zaman  : 20:54:37
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "desk",
       "type": "desk",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "blocked"
@@ -1716,16 +1710,16 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     },
     {
       "id": "rubble",
       "type": "rubble",
       "placement_type": "floor",
       "attributes": [
-        "broken"
+        "large"
       ],
-      "scale_modifier": 1.0,
+      "scale_modifier": 1.5,
       "traversability": "blocked"
     },
     {
@@ -1734,7 +1728,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -1763,17 +1757,17 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a sofa against the back wall. A table is in front of the sofa. A window is on the left wall. A bookshelf is against the right wall."
-  🕐  Zaman  : 15:11:08
+ INPUT  : "There is a sofa against the back wall. A table is in front of the sofa. A window is on the left wall. A bookshelf is against the right wall."
+ Zaman  : 20:55:21
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "sofa",
       "type": "sofa",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "walkable_over"
@@ -1792,12 +1786,12 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "bookshelf",
       "type": "bookshelf",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "blocked"
@@ -1829,10 +1823,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. An injured person is lying in the center. A first aid kit is on the right side. A chair is next to the injured person."
-  🕐  Zaman  : 15:11:52
+ INPUT  : "There is a door on the back wall. An injured person is lying in the center. A first aid kit is on the right side. A chair is next to the injured person."
+ Zaman  : 20:56:06
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -1852,7 +1846,7 @@
         "injured"
       ],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "passable"
     },
     {
       "id": "first_aid_kit",
@@ -1868,7 +1862,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     }
   ],
   "relations": [
@@ -1897,10 +1891,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. A table is in the center of the room blocking the path. A chair is next to the table. A window is on the left wall."
-  🕐  Zaman  : 15:12:34
+ INPUT  : "There is a door on the back wall. A table is in the center of the room blocking the path. A chair is next to the table. A window is on the left wall."
+ Zaman  : 20:56:49
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -1965,10 +1959,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is concrete debris in the center of the room. An injured person is next to the concrete. A door is on the right wall. A window is on the back wall."
-  🕐  Zaman  : 15:13:19
+ INPUT  : "There is concrete debris in the center of the room. An injured person is next to the concrete. A door is on the right wall. A window is on the back wall."
+ Zaman  : 20:57:34
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -1990,7 +1984,7 @@
         "injured"
       ],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     },
     {
       "id": "wall_1",
@@ -1998,7 +1992,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "wall_2",
@@ -2035,17 +2029,17 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a bed against the back wall. A wardrobe is against the left wall. A window is on the right wall. There is rubble on the left side of the room."
-  🕐  Zaman  : 15:14:05
+ INPUT  : "There is a bed against the back wall. A wardrobe is against the left wall. A window is on the right wall. There is rubble on the left side of the room."
+ Zaman  : 20:58:20
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "bed_1",
       "type": "bed",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "walkable_over"
@@ -2053,7 +2047,7 @@
     {
       "id": "wardrobe_1",
       "type": "wardrobe",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "blocked"
@@ -2064,7 +2058,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "rubble_1",
@@ -2103,17 +2097,17 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a desk against the back wall. A chair is in front of the desk. A bookshelf is against the left wall. A door is on the right wall."
-  🕐  Zaman  : 15:14:48
+ INPUT  : "There is a desk against the back wall. A chair is in front of the desk. A bookshelf is against the left wall. A door is on the right wall."
+ Zaman  : 20:59:03
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "desk",
       "type": "desk",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "blocked"
@@ -2124,12 +2118,12 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     },
     {
       "id": "bookshelf",
       "type": "bookshelf",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "blocked"
@@ -2140,7 +2134,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -2169,15 +2163,15 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a stretcher in the center of the room. A wheelchair is next to the stretcher. A door is on the back wall. A window is on the left wall."
-  🕐  Zaman  : 15:15:34
+ INPUT  : "There is a stretcher in the center of the room. A wheelchair is next to the stretcher. A door is on the back wall. A window is on the left wall."
+ Zaman  : 20:59:48
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
-      "id": "obj_1",
+      "id": "stretcher",
       "type": "stretcher",
       "placement_type": "floor",
       "attributes": [],
@@ -2185,7 +2179,7 @@
       "traversability": "blocked"
     },
     {
-      "id": "obj_2",
+      "id": "wheelchair",
       "type": "wheelchair",
       "placement_type": "floor",
       "attributes": [],
@@ -2193,7 +2187,7 @@
       "traversability": "passable"
     },
     {
-      "id": "wall_1",
+      "id": "door",
       "type": "door",
       "placement_type": "wall",
       "attributes": [
@@ -2203,32 +2197,32 @@
       "traversability": "blocked"
     },
     {
-      "id": "wall_2",
+      "id": "window",
       "type": "window",
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     }
   ],
   "relations": [
     {
-      "source_id": "obj_1",
+      "source_id": "stretcher",
       "relation": "in_center",
       "target_id": "room"
     },
     {
-      "source_id": "obj_2",
+      "source_id": "wheelchair",
       "relation": "next_to",
-      "target_id": "obj_1"
+      "target_id": "stretcher"
     },
     {
-      "source_id": "wall_1",
+      "source_id": "door",
       "relation": "on_back_wall",
       "target_id": "room"
     },
     {
-      "source_id": "wall_2",
+      "source_id": "window",
       "relation": "on_left_wall",
       "target_id": "room"
     }
@@ -2237,10 +2231,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a TV against the back wall. An armchair is in the center of the room. A couch is against the left wall. A door is on the right wall."
-  🕐  Zaman  : 15:16:18
+ INPUT  : "There is a TV against the back wall. An armchair is in the center of the room. A couch is against the left wall. A door is on the right wall."
+ Zaman  : 21:00:31
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -2263,10 +2257,10 @@
     {
       "id": "couch",
       "type": "couch",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "walkable_over"
     },
     {
       "id": "door",
@@ -2274,7 +2268,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -2303,20 +2297,20 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a bed against the back wall. A nightstand is next to the bed. A lamp is on the nightstand. A door is on the left wall."
-  🕐  Zaman  : 15:17:03
+ INPUT  : "There is a bed against the back wall. A nightstand is next to the bed. A lamp is on the nightstand. A door is on the left wall."
+ Zaman  : 21:01:16
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "bed_1",
       "type": "bed",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "walkable_over"
     },
     {
       "id": "nightstand_1",
@@ -2324,7 +2318,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "lamp_1",
@@ -2355,24 +2349,24 @@
       "target_id": "bed_1"
     },
     {
-      "source_id": "lamp_1",
-      "relation": "in_center",
-      "target_id": "nightstand_1"
-    },
-    {
       "source_id": "door_1",
       "relation": "on_left_wall",
       "target_id": "room"
+    },
+    {
+      "source_id": "lamp_1",
+      "relation": "on",
+      "target_id": "nightstand_1"
     }
   ]
 }
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. There is rubble in the center of the room. A broken wall is on the left side. A table is on the right side."
-  🕐  Zaman  : 15:32:53
+ INPUT  : "There is a door on the back wall. There is rubble in the center of the room. A broken wall is on the left side. A table is on the right side."
+ Zaman  : 21:02:00
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -2392,7 +2386,7 @@
         "broken"
       ],
       "scale_modifier": 1.5,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "wall_broken",
@@ -2410,7 +2404,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -2439,10 +2433,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is an injured person in the center of the room. An oxygen tank is next to the injured person. A stretcher is on the right side. A door is on the back wall. A window is on the left wall."
-  🕐  Zaman  : 15:37:07
+ INPUT  : "There is an injured person in the center of the room. An oxygen tank is next to the injured person. A stretcher is on the right side. A door is on the back wall. A window is on the left wall."
+ Zaman  : 21:02:56
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -2452,7 +2446,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "passable"
     },
     {
       "id": "oxygen_tank_1",
@@ -2468,7 +2462,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "door_1",
@@ -2486,7 +2480,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -2520,17 +2514,17 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a large bed against the back wall. A nightstand is next to the bed. A door is on the left wall."
-  🕐  Zaman  : 15:37:43
+ INPUT  : "There is a large bed against the back wall. A nightstand is next to the bed. A door is on the left wall."
+ Zaman  : 21:03:32
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "bed_1",
       "type": "bed",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [
         "large"
       ],
@@ -2543,7 +2537,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "door_1",
@@ -2575,17 +2569,17 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A sofa is against the right wall. A small table is in front of the sofa. A window is on the back wall."
-  🕐  Zaman  : 15:38:18
+ INPUT  : "A sofa is against the right wall. A small table is in front of the sofa. A window is on the back wall."
+ Zaman  : 21:04:08
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "sofa_1",
       "type": "sofa",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "walkable_over"
@@ -2606,7 +2600,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -2630,10 +2624,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. A stretcher is in the center. A wheelchair is next to the stretcher. A window is on the left wall."
-  🕐  Zaman  : 15:39:02
+ INPUT  : "There is a door on the back wall. A stretcher is in the center. A wheelchair is next to the stretcher. A window is on the left wall."
+ Zaman  : 21:04:52
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -2651,7 +2645,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "wheelchair",
@@ -2696,10 +2690,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the left wall. A desk is against the back wall. A chair is in front of the desk. There is rubble on the right side."
-  🕐  Zaman  : 15:39:42
+ INPUT  : "There is a window on the left wall. A desk is against the back wall. A chair is in front of the desk. There is rubble on the right side."
+ Zaman  : 21:05:32
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -2717,7 +2711,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "chair",
@@ -2725,7 +2719,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     },
     {
       "id": "rubble",
@@ -2759,10 +2753,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A victim is lying in the center of the room. An oxygen tank is next to the victim. A door is on the right wall. A window is on the back wall."
-  🕐  Zaman  : 15:40:25
+ INPUT  : "A victim is lying in the center of the room. An oxygen tank is next to the victim. A door is on the right wall. A window is on the back wall."
+ Zaman  : 21:06:16
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -2772,7 +2766,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "passable"
     },
     {
       "id": "oxygen_tank",
@@ -2786,7 +2780,9 @@
       "id": "door",
       "type": "door",
       "placement_type": "wall",
-      "attributes": [],
+      "attributes": [
+        "open"
+      ],
       "scale_modifier": 1.0,
       "traversability": "blocked"
     },
@@ -2796,7 +2792,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -2825,10 +2821,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the left wall. A large wardrobe is against the right wall. A broken chair is in the center."
-  🕐  Zaman  : 15:41:01
+ INPUT  : "There is a door on the left wall. A large wardrobe is against the right wall. A broken chair is in the center."
+ Zaman  : 21:06:53
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -2845,13 +2841,13 @@
     {
       "id": "wardrobe_1",
       "type": "wardrobe",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [
         "large",
         "on_right_wall"
       ],
       "scale_modifier": 1.5,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "chair_1",
@@ -2862,7 +2858,7 @@
         "in_center"
       ],
       "scale_modifier": 0.7,
-      "traversability": "blocked"
+      "traversability": "passable"
     }
   ],
   "relations": [
@@ -2886,15 +2882,15 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the right wall. A couch is against the back wall. A small table is in front of the couch. A door is on the left wall."
-  🕐  Zaman  : 15:41:44
+ INPUT  : "There is a window on the right wall. A couch is against the back wall. A small table is in front of the couch. A door is on the left wall."
+ Zaman  : 21:07:38
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
-      "id": "window",
+      "id": "window_1",
       "type": "window",
       "placement_type": "wall",
       "attributes": [],
@@ -2902,7 +2898,7 @@
       "traversability": "blocked"
     },
     {
-      "id": "couch",
+      "id": "couch_1",
       "type": "sofa",
       "placement_type": "floor",
       "attributes": [],
@@ -2910,17 +2906,17 @@
       "traversability": "walkable_over"
     },
     {
-      "id": "table",
+      "id": "table_1",
       "type": "table",
       "placement_type": "floor",
       "attributes": [
         "small"
       ],
       "scale_modifier": 0.7,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
-      "id": "door",
+      "id": "door_1",
       "type": "door",
       "placement_type": "wall",
       "attributes": [],
@@ -2930,22 +2926,22 @@
   ],
   "relations": [
     {
-      "source_id": "window",
+      "source_id": "window_1",
       "relation": "on_right_wall",
       "target_id": "room"
     },
     {
-      "source_id": "couch",
+      "source_id": "couch_1",
       "relation": "in_front_of",
-      "target_id": "table"
+      "target_id": "table_1"
     },
     {
-      "source_id": "table",
-      "relation": "next_to",
-      "target_id": "couch"
+      "source_id": "table_1",
+      "relation": "on_center",
+      "target_id": "couch_1"
     },
     {
-      "source_id": "door",
+      "source_id": "door_1",
       "relation": "on_left_wall",
       "target_id": "room"
     }
@@ -2954,10 +2950,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a collapsed bookshelf on the left side. A door is on the back wall. An injured person is next to the bookshelf. A first aid kit is in the center."
-  🕐  Zaman  : 15:42:29
+ INPUT  : "There is a collapsed bookshelf on the left side. A door is on the back wall. An injured person is next to the bookshelf. A first aid kit is in the center."
+ Zaman  : 21:08:23
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -2977,7 +2973,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "injured_person",
@@ -2987,7 +2983,7 @@
         "injured"
       ],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "passable"
     },
     {
       "id": "first_aid_kit",
@@ -3024,16 +3020,16 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A huge debris pile is in the center of the room. A door is on the right wall. A window is on the back wall. A chair is on the left side."
-  🕐  Zaman  : 15:43:20
+ INPUT  : "A huge debris pile is in the center of the room. A door is on the right wall. A window is on the back wall. A chair is on the left side."
+ Zaman  : 21:09:14
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "obj_1",
-      "type": "debris_pile",
+      "type": "debris",
       "placement_type": "floor",
       "attributes": [
         "huge"
@@ -3055,7 +3051,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "window_1",
@@ -3071,7 +3067,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     }
   ],
   "relations": [
@@ -3092,18 +3088,18 @@
     },
     {
       "source_id": "chair_1",
-      "relation": "left_of",
-      "target_id": "obj_1"
+      "relation": "in_center",
+      "target_id": "room"
     }
   ]
 }
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. A small nightstand is on the right side. A lamp is on the nightstand. A window is on the left wall."
-  🕐  Zaman  : 15:44:03
+ INPUT  : "There is a door on the back wall. A small nightstand is on the right side. A lamp is on the nightstand. A window is on the left wall."
+ Zaman  : 21:09:56
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -3123,7 +3119,7 @@
         "small"
       ],
       "scale_modifier": 0.7,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "lamp",
@@ -3150,28 +3146,28 @@
     },
     {
       "source_id": "nightstand",
-      "relation": "on_right_of",
+      "relation": "right_of",
       "target_id": "wall"
-    },
-    {
-      "source_id": "lamp",
-      "relation": "in_center",
-      "target_id": "nightstand"
     },
     {
       "source_id": "window",
       "relation": "on_left_wall",
       "target_id": "room"
+    },
+    {
+      "source_id": "lamp",
+      "relation": "on",
+      "target_id": "nightstand"
     }
   ]
 }
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A fire extinguisher is on the right side of the room. A door is on the back wall. A window is on the left wall. A table is in the center."
-  🕐  Zaman  : 15:44:53
+ INPUT  : "A fire extinguisher is on the right side of the room. A door is on the back wall. A window is on the left wall. A table is in the center."
+ Zaman  : 21:10:48
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -3197,7 +3193,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "window_1",
@@ -3213,24 +3209,24 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     }
   ],
   "relations": [
     {
       "source_id": "obj_1",
       "relation": "right_of",
-      "target_id": "wall_1"
+      "target_id": "room"
     },
     {
       "source_id": "door_1",
       "relation": "on_back_wall",
-      "target_id": "room"
+      "target_id": "wall_1"
     },
     {
       "source_id": "window_1",
       "relation": "on_left_wall",
-      "target_id": "room"
+      "target_id": "wall_1"
     },
     {
       "source_id": "table_1",
@@ -3242,10 +3238,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the right wall. A wheelchair is in the center. A stretcher is next to the wheelchair. A window is on the front wall."
-  🕐  Zaman  : 15:45:36
+ INPUT  : "There is a door on the right wall. A wheelchair is in the center. A stretcher is next to the wheelchair. A window is on the front wall."
+ Zaman  : 21:11:31
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -3273,7 +3269,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "window",
@@ -3292,7 +3288,7 @@
     },
     {
       "source_id": "wheelchair",
-      "relation": "in_center",
+      "relation": "behind",
       "target_id": "room"
     },
     {
@@ -3310,10 +3306,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A large table is against the back wall. A chair is in front of the table. A door is on the left wall. There is debris on the right side."
-  🕐  Zaman  : 15:46:21
+ INPUT  : "A large table is against the back wall. A chair is in front of the table. A door is on the left wall. There is debris on the right side."
+ Zaman  : 21:12:17
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -3333,24 +3329,24 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     },
     {
       "id": "door_1",
       "type": "door",
       "placement_type": "wall",
-      "attributes": [
-        "open"
-      ],
+      "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "debris_1",
       "type": "rubble",
       "placement_type": "floor",
-      "attributes": [],
-      "scale_modifier": 1.0,
+      "attributes": [
+        "broken"
+      ],
+      "scale_modifier": 0.5,
       "traversability": "blocked"
     }
   ],
@@ -3380,15 +3376,15 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the back wall. A wardrobe is against the left wall. A bed is against the right wall. A door is on the front wall."
-  🕐  Zaman  : 15:47:04
+ INPUT  : "There is a window on the back wall. A wardrobe is against the left wall. A bed is against the right wall. A door is on the front wall."
+ Zaman  : 21:13:00
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
-      "id": "wall_back",
+      "id": "window",
       "type": "window",
       "placement_type": "wall",
       "attributes": [],
@@ -3396,23 +3392,23 @@
       "traversability": "blocked"
     },
     {
-      "id": "wall_left",
+      "id": "wardrobe",
       "type": "wardrobe",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "blocked"
     },
     {
-      "id": "wall_right",
+      "id": "bed",
       "type": "bed",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "walkable_over"
     },
     {
-      "id": "wall_front",
+      "id": "door",
       "type": "door",
       "placement_type": "wall",
       "attributes": [],
@@ -3422,22 +3418,22 @@
   ],
   "relations": [
     {
-      "source_id": "wall_back",
+      "source_id": "window",
       "relation": "on_back_wall",
       "target_id": "room"
     },
     {
-      "source_id": "wall_left",
+      "source_id": "wardrobe",
       "relation": "on_left_wall",
       "target_id": "room"
     },
     {
-      "source_id": "wall_right",
+      "source_id": "bed",
       "relation": "on_right_wall",
       "target_id": "room"
     },
     {
-      "source_id": "wall_front",
+      "source_id": "door",
       "relation": "on_front_wall",
       "target_id": "room"
     }
@@ -3446,10 +3442,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a tiny fire extinguisher on the left side. A big obstacle is in the center. A door is on the back wall."
-  🕐  Zaman  : 15:47:39
+ INPUT  : "There is a tiny fire extinguisher on the left side. A big obstacle is in the center. A door is on the back wall."
+ Zaman  : 21:13:35
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -3461,7 +3457,7 @@
         "tiny"
       ],
       "scale_modifier": 0.5,
-      "traversability": "blocked"
+      "traversability": "passable"
     },
     {
       "id": "obj_2",
@@ -3477,7 +3473,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -3501,10 +3497,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. A window is on the left wall. A large bed is against the right wall. A nightstand is next to the bed. There is rubble in the center."
-  🕐  Zaman  : 15:48:31
+ INPUT  : "There is a door on the back wall. A window is on the left wall. A large bed is against the right wall. A nightstand is next to the bed. There is rubble in the center."
+ Zaman  : 21:14:28
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -3522,7 +3518,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "bed",
@@ -3532,7 +3528,7 @@
         "large"
       ],
       "scale_modifier": 1.5,
-      "traversability": "blocked"
+      "traversability": "walkable_over"
     },
     {
       "id": "nightstand",
@@ -3540,7 +3536,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "rubble",
@@ -3582,10 +3578,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "An injured person is lying in the center. A stretcher is next to the injured person. A first aid kit is next to the stretcher. A door is on the back wall. A window is on the right wall."
-  🕐  Zaman  : 15:49:27
+ INPUT  : "An injured person is lying in the center. A stretcher is next to the injured person. A first aid kit is next to the stretcher. A door is on the back wall. A window is on the right wall."
+ Zaman  : 21:15:26
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -3595,7 +3591,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "passable"
     },
     {
       "id": "stretcher_1",
@@ -3603,7 +3599,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "firstaidkit_1",
@@ -3611,17 +3607,17 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "walkable_over"
     },
     {
       "id": "door_1",
       "type": "door",
       "placement_type": "wall",
       "attributes": [
-        "open"
+        "closed"
       ],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "window_1",
@@ -3663,17 +3659,17 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a huge sofa against the back wall. A small table is in front of the sofa. A chair is next to the table. A door is on the right wall. A window is on the left wall."
-  🕐  Zaman  : 15:50:22
+ INPUT  : "There is a huge sofa against the back wall. A small table is in front of the sofa. A chair is next to the table. A door is on the right wall. A window is on the left wall."
+ Zaman  : 21:16:19
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
-      "id": "sofa_1",
+      "id": "sofa",
       "type": "sofa",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [
         "huge"
       ],
@@ -3681,15 +3677,17 @@
       "traversability": "walkable_over"
     },
     {
-      "id": "table_1",
+      "id": "table",
       "type": "table",
       "placement_type": "floor",
-      "attributes": [],
-      "scale_modifier": 1.0,
+      "attributes": [
+        "small"
+      ],
+      "scale_modifier": 0.7,
       "traversability": "blocked"
     },
     {
-      "id": "chair_1",
+      "id": "chair",
       "type": "chair",
       "placement_type": "floor",
       "attributes": [],
@@ -3697,7 +3695,7 @@
       "traversability": "passable"
     },
     {
-      "id": "door_1",
+      "id": "door",
       "type": "door",
       "placement_type": "wall",
       "attributes": [],
@@ -3705,37 +3703,37 @@
       "traversability": "blocked"
     },
     {
-      "id": "window_1",
+      "id": "window",
       "type": "window",
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     }
   ],
   "relations": [
     {
-      "source_id": "sofa_1",
+      "source_id": "sofa",
       "relation": "on_back_wall",
       "target_id": "room"
     },
     {
-      "source_id": "table_1",
+      "source_id": "table",
       "relation": "in_front_of",
-      "target_id": "sofa_1"
+      "target_id": "sofa"
     },
     {
-      "source_id": "chair_1",
+      "source_id": "chair",
       "relation": "next_to",
-      "target_id": "table_1"
+      "target_id": "table"
     },
     {
-      "source_id": "door_1",
+      "source_id": "door",
       "relation": "on_right_wall",
       "target_id": "room"
     },
     {
-      "source_id": "window_1",
+      "source_id": "window",
       "relation": "on_left_wall",
       "target_id": "room"
     }
@@ -3744,10 +3742,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. A window is on the right wall. A collapsed wardrobe is on the left side. There is rubble next to the wardrobe. A victim is in the center."
-  🕐  Zaman  : 15:51:14
+ INPUT  : "There is a door on the back wall. A window is on the right wall. A collapsed wardrobe is on the left side. There is rubble next to the wardrobe. A victim is in the center."
+ Zaman  : 21:17:12
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -3765,7 +3763,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "wardrobe",
@@ -3783,7 +3781,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "victim",
@@ -3791,7 +3789,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "passable"
     }
   ],
   "relations": [
@@ -3807,7 +3805,7 @@
     },
     {
       "source_id": "wardrobe",
-      "relation": "in_center",
+      "relation": "left",
       "target_id": "room"
     },
     {
@@ -3825,17 +3823,17 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A large desk is against the back wall. A chair is in front of the desk. A bookshelf is against the left wall. A door is on the right wall. A window is on the front wall."
-  🕐  Zaman  : 15:52:08
+ INPUT  : "A large desk is against the back wall. A chair is in front of the desk. A bookshelf is against the left wall. A door is on the right wall. A window is on the front wall."
+ Zaman  : 21:18:07
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "desk_1",
       "type": "desk",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [
         "large"
       ],
@@ -3848,12 +3846,12 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     },
     {
       "id": "bookshelf_1",
       "type": "bookshelf",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "blocked"
@@ -3864,7 +3862,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "window_1",
@@ -3906,106 +3904,101 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is debris in the center of the room. A door is on the back wall. A window is on the left wall. A broken chair is on the right side. A fire extinguisher is on the right side."
-  🕐  Zaman  : 15:53:12
+ INPUT  : "There is debris in the center of the room. A door is on the back wall. A window is on the left wall. A broken chair is on the right side. A fire extinguisher is on the right side."
+ Zaman  : 21:20:16
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
-      "id": "obj_1",
-      "type": "debris",
-      "placement_type": "floor",
-      "attributes": [],
-      "scale_modifier": 1.0,
-      "traversability": "blocked"
-    },
-    {
-      "id": "wall_1",
-      "type": "wall",
+      "id": "room",
+      "type": "room",
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "blocked"
     },
     {
-      "id": "door_1",
+      "id": "debris",
+      "type": "rubble",
+      "placement_type": "floor",
+      "attributes": [
+        "large"
+      ],
+      "scale_modifier": 1.5,
+      "traversability": "blocked"
+    },
+    {
+      "id": "door",
       "type": "door",
       "placement_type": "wall",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "blocked"
+    },
+    {
+      "id": "window",
+      "type": "window",
+      "placement_type": "wall",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "blocked"
+    },
+    {
+      "id": "chair",
+      "type": "chair",
+      "placement_type": "floor",
       "attributes": [
-        "on_back_wall"
+        "broken"
       ],
       "scale_modifier": 1.0,
       "traversability": "passable"
     },
     {
-      "id": "window_1",
-      "type": "window",
-      "placement_type": "wall",
-      "attributes": [
-        "on_left_wall"
-      ],
-      "scale_modifier": 1.0,
-      "traversability": "walkable_over"
-    },
-    {
-      "id": "chair_1",
-      "type": "chair",
-      "placement_type": "floor",
-      "attributes": [
-        "broken",
-        "right_side"
-      ],
-      "scale_modifier": 1.0,
-      "traversability": "blocked"
-    },
-    {
-      "id": "extinguisher_1",
+      "id": "fire_extinguisher",
       "type": "fire_extinguisher",
       "placement_type": "floor",
-      "attributes": [
-        "right_side"
-      ],
+      "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "passable"
     }
   ],
   "relations": [
     {
-      "source_id": "obj_1",
+      "source_id": "debris",
       "relation": "in_center",
       "target_id": "room"
     },
     {
-      "source_id": "door_1",
+      "source_id": "door",
       "relation": "on_back_wall",
-      "target_id": "wall_1"
+      "target_id": "room"
     },
     {
-      "source_id": "window_1",
+      "source_id": "window",
       "relation": "on_left_wall",
-      "target_id": "wall_1"
-    },
-    {
-      "source_id": "chair_1",
-      "relation": "right_side",
       "target_id": "room"
     },
     {
-      "source_id": "extinguisher_1",
-      "relation": "right_side",
-      "target_id": "room"
+      "source_id": "chair",
+      "relation": "right_of",
+      "target_id": "debris"
+    },
+    {
+      "source_id": "fire_extinguisher",
+      "relation": "right_of",
+      "target_id": "debris"
     }
   ]
 }
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the left wall. A window is on the back wall. A large bed is against the right wall. A nightstand is next to the bed. A small lamp is on the nightstand."
-  🕐  Zaman  : 15:54:04
+ INPUT  : "There is a door on the left wall. A window is on the back wall. A large bed is against the right wall. A nightstand is next to the bed. A small lamp is on the nightstand."
+ Zaman  : 21:21:09
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -4041,7 +4034,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "lamp",
@@ -4077,7 +4070,7 @@
     },
     {
       "source_id": "lamp",
-      "relation": "in_center",
+      "relation": "on",
       "target_id": "nightstand"
     }
   ]
@@ -4085,10 +4078,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a victim in the center of the room. An oxygen tank is next to the victim. A wheelchair is on the right side. A stretcher is on the left side. A door is on the back wall."
-  🕐  Zaman  : 15:54:56
+ INPUT  : "There is a victim in the center of the room. An oxygen tank is next to the victim. A wheelchair is on the right side. A stretcher is on the left side. A door is on the back wall."
+ Zaman  : 21:22:03
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -4098,7 +4091,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "passable"
     },
     {
       "id": "oxygen_tank",
@@ -4114,7 +4107,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     },
     {
       "id": "stretcher",
@@ -4122,7 +4115,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "room",
@@ -4164,20 +4157,20 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A couch is against the back wall. An armchair is on the right side. A small table is in the center. A door is on the left wall. There is debris on the right side."
-  🕐  Zaman  : 15:55:49
+ INPUT  : "A couch is against the back wall. An armchair is on the right side. A small table is in the center. A door is on the left wall. There is debris on the right side."
+ Zaman  : 21:22:56
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "couch",
       "type": "sofa",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "walkable_over"
     },
     {
       "id": "armchair",
@@ -4185,7 +4178,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     },
     {
       "id": "table",
@@ -4203,7 +4196,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "debris",
@@ -4223,7 +4216,7 @@
     {
       "source_id": "armchair",
       "relation": "right_of",
-      "target_id": "couch"
+      "target_id": "table"
     },
     {
       "source_id": "table",
@@ -4238,17 +4231,17 @@
     {
       "source_id": "debris",
       "relation": "right_of",
-      "target_id": "couch"
+      "target_id": "table"
     }
   ]
 }
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a huge concrete block in the center. A door is on the back wall. A window is on the right wall. An injured person is next to the concrete. A first aid kit is next to the injured person."
-  🕐  Zaman  : 15:56:51
+ INPUT  : "There is a huge concrete block in the center. A door is on the back wall. A window is on the right wall. An injured person is next to the concrete. A first aid kit is next to the injured person."
+ Zaman  : 21:23:51
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -4264,24 +4257,14 @@
     },
     {
       "id": "wall_1",
-      "type": "wall",
+      "type": "door",
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "blocked"
     },
     {
-      "id": "door_1",
-      "type": "door",
-      "placement_type": "wall",
-      "attributes": [
-        "open"
-      ],
-      "scale_modifier": 1.0,
-      "traversability": "passable"
-    },
-    {
-      "id": "window_1",
+      "id": "wall_2",
       "type": "window",
       "placement_type": "wall",
       "attributes": [],
@@ -4296,10 +4279,10 @@
         "injured"
       ],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "passable"
     },
     {
-      "id": "first_aid_kit_1",
+      "id": "kit_1",
       "type": "first_aid_kit",
       "placement_type": "floor",
       "attributes": [],
@@ -4314,14 +4297,14 @@
       "target_id": "room"
     },
     {
-      "source_id": "door_1",
+      "source_id": "wall_1",
       "relation": "on_back_wall",
-      "target_id": "wall_1"
+      "target_id": "room"
     },
     {
-      "source_id": "window_1",
+      "source_id": "wall_2",
       "relation": "on_right_wall",
-      "target_id": "wall_1"
+      "target_id": "room"
     },
     {
       "source_id": "person_1",
@@ -4329,7 +4312,7 @@
       "target_id": "obj_1"
     },
     {
-      "source_id": "first_aid_kit_1",
+      "source_id": "kit_1",
       "relation": "next_to",
       "target_id": "person_1"
     }
@@ -4338,10 +4321,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. A window is on the left wall. A broken wardrobe is against the right wall. A collapsed table is in the center. There is rubble next to the table."
-  🕐  Zaman  : 15:57:43
+ INPUT  : "There is a door on the back wall. A window is on the left wall. A broken wardrobe is against the right wall. A collapsed table is in the center. There is rubble next to the table."
+ Zaman  : 21:24:44
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -4364,7 +4347,7 @@
     {
       "id": "wardrobe",
       "type": "wardrobe",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [
         "broken"
       ],
@@ -4421,10 +4404,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A large bed is against the back wall. A nightstand is next to the bed. A tiny lamp is on the nightstand. A door is on the left wall. A window is on the right wall."
-  🕐  Zaman  : 15:58:38
+ INPUT  : "A large bed is against the back wall. A nightstand is next to the bed. A tiny lamp is on the nightstand. A door is on the left wall. A window is on the right wall."
+ Zaman  : 21:25:40
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -4436,7 +4419,7 @@
         "large"
       ],
       "scale_modifier": 1.5,
-      "traversability": "blocked"
+      "traversability": "walkable_over"
     },
     {
       "id": "nightstand_1",
@@ -4446,7 +4429,7 @@
         "tiny"
       ],
       "scale_modifier": 0.5,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "lamp_1",
@@ -4485,11 +4468,6 @@
       "target_id": "bed_1"
     },
     {
-      "source_id": "lamp_1",
-      "relation": "in_center",
-      "target_id": "nightstand_1"
-    },
-    {
       "source_id": "door_1",
       "relation": "on_left_wall",
       "target_id": "room"
@@ -4498,106 +4476,41 @@
       "source_id": "window_1",
       "relation": "on_right_wall",
       "target_id": "room"
+    },
+    {
+      "source_id": "lamp_1",
+      "relation": "on",
+      "target_id": "nightstand_1"
     }
   ]
 }
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a fire extinguisher on the left side. A door is on the back wall. A window is on the right wall. A big obstacle is in the center. A stretcher is on the right side."
-  🕐  Zaman  : 15:59:31
+ INPUT  : "There is a fire extinguisher on the left side. A door is on the back wall. A window is on the right wall. A big obstacle is in the center. A stretcher is on the right side."
+ Zaman  : 21:26:35
 ======================================================================
-  🧠 LLM JSON OUTPUT:
-----------------------------------------------------------------------
-{
-  "assets": [
-    {
-      "id": "extinguisher",
-      "type": "fire_extinguisher",
-      "placement_type": "floor",
-      "attributes": [],
-      "scale_modifier": 1.0,
-      "traversability": "blocked"
-    },
-    {
-      "id": "door",
-      "type": "door",
-      "placement_type": "wall",
-      "attributes": [
-        "closed"
-      ],
-      "scale_modifier": 1.0,
-      "traversability": "blocked"
-    },
-    {
-      "id": "window",
-      "type": "window",
-      "placement_type": "wall",
-      "attributes": [],
-      "scale_modifier": 1.0,
-      "traversability": "passable"
-    },
-    {
-      "id": "obstacle",
-      "type": "rubble",
-      "placement_type": "floor",
-      "attributes": [
-        "large"
-      ],
-      "scale_modifier": 1.5,
-      "traversability": "blocked"
-    },
-    {
-      "id": "stretcher",
-      "type": "stretcher",
-      "placement_type": "floor",
-      "attributes": [],
-      "scale_modifier": 1.0,
-      "traversability": "walkable_over"
-    }
-  ],
-  "relations": [
-    {
-      "source_id": "extinguisher",
-      "relation": "left_of",
-      "target_id": "room"
-    },
-    {
-      "source_id": "door",
-      "relation": "on_back_wall",
-      "target_id": "room"
-    },
-    {
-      "source_id": "window",
-      "relation": "on_right_wall",
-      "target_id": "room"
-    },
-    {
-      "source_id": "obstacle",
-      "relation": "in_center",
-      "target_id": "room"
-    },
-    {
-      "source_id": "stretcher",
-      "relation": "right_of",
-      "target_id": "room"
-    }
-  ]
-}
+ HATA: Error: 2 validation errors for SceneGraph
+assets.2.traversability
+  Input should be 'blocked', 'walkable_over' or 'passable' [type=literal_error, input_value='passable_over', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+assets.4.traversability
+  Input should be 'blocked', 'walkable_over' or 'passable' [type=literal_error, input_value='passable_over', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/literal_error
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a desk against the left wall. A chair is in front of the desk. A bookshelf is against the back wall. A window is on the right wall. A door is on the front wall. There is debris in the center."
-  🕐  Zaman  : 16:00:33
+ INPUT  : "There is a desk against the left wall. A chair is in front of the desk. A bookshelf is against the back wall. A window is on the right wall. A door is on the front wall. There is debris in the center."
+ Zaman  : 21:27:38
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "desk",
-      "type": "desk",
-      "placement_type": "wall",
+      "type": "table",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "blocked"
@@ -4608,12 +4521,12 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     },
     {
       "id": "bookshelf",
       "type": "bookshelf",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "blocked"
@@ -4624,7 +4537,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "door",
@@ -4632,7 +4545,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "debris",
@@ -4681,10 +4594,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "An injured person is on the right side of the room. A stretcher is next to the injured person. A door is on the back wall. A window is on the left wall. A first aid kit is in the center."
-  🕐  Zaman  : 16:01:29
+ INPUT  : "An injured person is on the right side of the room. A stretcher is next to the injured person. A door is on the back wall. A window is on the left wall. A first aid kit is in the center."
+ Zaman  : 21:28:35
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -4694,7 +4607,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "passable"
     },
     {
       "id": "stretcher_1",
@@ -4702,7 +4615,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "door_1",
@@ -4720,7 +4633,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "first_aid_kit_1",
@@ -4762,10 +4675,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the right wall. A window is on the left wall. A door is on the back wall. A large sofa is against the front wall. A table is in the center."
-  🕐  Zaman  : 16:02:22
+ INPUT  : "There is a window on the right wall. A window is on the left wall. A door is on the back wall. A large sofa is against the front wall. A table is in the center."
+ Zaman  : 21:29:29
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -4843,10 +4756,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a large wardrobe against the left wall. A small desk is against the right wall. A chair is in front of the desk. A door is on the back wall."
-  🕐  Zaman  : 16:03:13
+ INPUT  : "There is a large wardrobe against the left wall. A small desk is against the right wall. A chair is in front of the desk. A door is on the back wall."
+ Zaman  : 21:30:22
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -4861,7 +4774,7 @@
     {
       "id": "wardrobe_1",
       "type": "wardrobe",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [
         "large"
       ],
@@ -4871,12 +4784,12 @@
     {
       "id": "desk_1",
       "type": "desk",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [
         "small"
       ],
       "scale_modifier": 0.7,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "chair_1",
@@ -4921,10 +4834,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is rubble on the left side. There is debris on the right side. A door is on the back wall. An injured person is in the center. A first aid kit is next to the injured person."
-  🕐  Zaman  : 16:04:08
+ INPUT  : "There is rubble on the left side. There is debris on the right side. A door is on the back wall. An injured person is in the center. A first aid kit is next to the injured person."
+ Zaman  : 21:31:17
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -4952,18 +4865,18 @@
         "open"
       ],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
-      "id": "person_1",
+      "id": "obj_3",
       "type": "injured_person",
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "passable"
     },
     {
-      "id": "kit_1",
+      "id": "obj_4",
       "type": "first_aid_kit",
       "placement_type": "floor",
       "attributes": [],
@@ -4988,34 +4901,34 @@
       "target_id": "room"
     },
     {
-      "source_id": "person_1",
+      "source_id": "obj_3",
       "relation": "in_center",
       "target_id": "room"
     },
     {
-      "source_id": "kit_1",
+      "source_id": "obj_4",
       "relation": "next_to",
-      "target_id": "person_1"
+      "target_id": "obj_3"
     }
   ]
 }
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A bed is against the back wall. A nightstand is next to the bed. A door is on the left wall. A broken chair is in the center. A window is on the right wall."
-  🕐  Zaman  : 16:05:02
+ INPUT  : "A bed is against the back wall. A nightstand is next to the bed. A door is on the left wall. A broken chair is in the center. A window is on the right wall."
+ Zaman  : 21:32:12
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "bed_1",
       "type": "bed",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "walkable_over"
     },
     {
       "id": "nightstand_1",
@@ -5023,7 +4936,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "door_1",
@@ -5041,7 +4954,7 @@
         "broken"
       ],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     },
     {
       "id": "window_1",
@@ -5083,10 +4996,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a stretcher in the center. An oxygen tank is next to the stretcher. A wheelchair is on the left side. A door is on the back wall. A window is on the front wall."
-  🕐  Zaman  : 16:05:56
+ INPUT  : "There is a stretcher in the center. An oxygen tank is next to the stretcher. A wheelchair is on the left side. A door is on the back wall. A window is on the front wall."
+ Zaman  : 21:33:06
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -5112,7 +5025,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "passable"
     },
     {
       "id": "door",
@@ -5130,7 +5043,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -5164,10 +5077,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a window on the back wall. A window is on the right wall. A door is on the left wall. There is huge rubble in the center. A victim is next to the rubble."
-  🕐  Zaman  : 16:06:50
+ INPUT  : "There is a window on the back wall. A window is on the right wall. A door is on the left wall. There is huge rubble in the center. A victim is next to the rubble."
+ Zaman  : 21:34:01
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -5211,7 +5124,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     }
   ],
   "relations": [
@@ -5245,20 +5158,20 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A couch is against the right wall. A small table is in front of the couch. A chair is next to the table. A door is on the back wall. A window is on the left wall."
-  🕐  Zaman  : 16:07:43
+ INPUT  : "A couch is against the right wall. A small table is in front of the couch. A chair is next to the table. A door is on the back wall. A window is on the left wall."
+ Zaman  : 21:34:54
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "couch",
       "type": "sofa",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "walkable_over"
     },
     {
       "id": "table",
@@ -5268,7 +5181,7 @@
         "small"
       ],
       "scale_modifier": 0.7,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "chair",
@@ -5292,7 +5205,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -5326,10 +5239,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. A door is on the right wall. A large sofa is against the left wall. A table is in the center. A chair is in front of the table."
-  🕐  Zaman  : 16:08:36
+ INPUT  : "There is a door on the back wall. A door is on the right wall. A large sofa is against the left wall. A table is in the center. A chair is in front of the table."
+ Zaman  : 21:35:48
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -5352,7 +5265,7 @@
     {
       "id": "sofa_left",
       "type": "sofa",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [
         "large"
       ],
@@ -5373,7 +5286,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     }
   ],
   "relations": [
@@ -5407,10 +5320,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A broken wall is on the left side of the room. There is rubble next to the broken wall. A door is on the back wall. A window is on the right wall. An obstacle is in the center."
-  🕐  Zaman  : 16:09:30
+ INPUT  : "A broken wall is on the left side of the room. There is rubble next to the broken wall. A door is on the back wall. A window is on the right wall. An obstacle is in the center."
+ Zaman  : 21:36:43
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -5438,7 +5351,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "window_1",
@@ -5446,7 +5359,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "obstacle_1",
@@ -5488,10 +5401,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a fire extinguisher on the right side. A wheelchair is in the center. An injured person is next to the wheelchair. A first aid kit is next to the injured person. A door is on the back wall. A window is on the left wall."
-  🕐  Zaman  : 16:10:29
+ INPUT  : "There is a fire extinguisher on the right side. A wheelchair is in the center. An injured person is next to the wheelchair. A first aid kit is next to the injured person. A door is on the back wall. A window is on the left wall."
+ Zaman  : 21:37:43
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -5501,7 +5414,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "passable"
     },
     {
       "id": "obj_2",
@@ -5509,17 +5422,15 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     },
     {
       "id": "obj_3",
       "type": "injured_person",
       "placement_type": "floor",
-      "attributes": [
-        "injured"
-      ],
+      "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "passable"
     },
     {
       "id": "obj_4",
@@ -5527,7 +5438,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     },
     {
       "id": "wall_1",
@@ -5576,10 +5487,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a large table in the center of the room. A chair is in front of the table. A bookshelf is against the back wall. A door is on the left wall. A window is on the right wall."
-  🕐  Zaman  : 16:11:24
+ INPUT  : "There is a large table in the center of the room. A chair is in front of the table. A bookshelf is against the back wall. A door is on the left wall. A window is on the right wall."
+ Zaman  : 21:38:38
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -5599,12 +5510,12 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     },
     {
       "id": "bookshelf_1",
       "type": "bookshelf",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "blocked"
@@ -5615,7 +5526,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "window_1",
@@ -5657,27 +5568,27 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A small wardrobe is against the left wall. A bed is against the back wall. A nightstand is next to the bed. A door is on the right wall. There is debris in the center."
-  🕐  Zaman  : 16:12:20
+ INPUT  : "A small wardrobe is against the left wall. A bed is against the back wall. A nightstand is next to the bed. A door is on the right wall. There is debris in the center."
+ Zaman  : 21:39:33
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "wardrobe",
       "type": "wardrobe",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [
         "small"
       ],
-      "scale_modifier": 0.7,
+      "scale_modifier": 1.0,
       "traversability": "blocked"
     },
     {
       "id": "bed",
       "type": "bed",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "walkable_over"
@@ -5696,7 +5607,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "debris",
@@ -5740,10 +5651,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a huge obstacle in the center. A victim is next to the obstacle. A door is on the back wall. A window is on the left wall. A first aid kit is on the right side."
-  🕐  Zaman  : 16:13:22
+ INPUT  : "There is a huge obstacle in the center. A victim is next to the obstacle. A door is on the back wall. A window is on the left wall. A first aid kit is on the right side."
+ Zaman  : 21:40:28
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -5763,7 +5674,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     },
     {
       "id": "door",
@@ -5773,7 +5684,7 @@
         "open"
       ],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "window",
@@ -5781,7 +5692,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "first_aid_kit",
@@ -5789,7 +5700,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "walkable_over"
     }
   ],
   "relations": [
@@ -5823,10 +5734,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. A large closet is against the left wall. A small desk is against the right wall. A chair is in front of the desk. A window is on the front wall."
-  🕐  Zaman  : 16:15:37
+ INPUT  : "There is a door on the back wall. A large closet is against the left wall. A small desk is against the right wall. A chair is in front of the desk. A window is on the front wall."
+ Zaman  : 21:41:21
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -5841,7 +5752,7 @@
     {
       "id": "closet",
       "type": "closet",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [
         "large"
       ],
@@ -5851,12 +5762,12 @@
     {
       "id": "desk",
       "type": "desk",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [
         "small"
       ],
       "scale_modifier": 0.7,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "chair",
@@ -5906,113 +5817,24 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is rubble in the center of the room. A broken wall is on the left side. A door is on the back wall. A window is on the right wall. A fire extinguisher is on the left side. An injured person is next to the rubble."
-  🕐  Zaman  : 16:18:24
+ INPUT  : "There is rubble in the center of the room. A broken wall is on the left side. A door is on the back wall. A window is on the right wall. A fire extinguisher is on the left side. An injured person is next to the rubble."
+ Zaman  : 21:44:54
 ======================================================================
-  🧠 LLM JSON OUTPUT:
-----------------------------------------------------------------------
-{
-  "assets": [
-    {
-      "id": "obj_1",
-      "type": "rubble",
-      "placement_type": "floor",
-      "attributes": [
-        "large"
-      ],
-      "scale_modifier": 1.5,
-      "traversability": "blocked"
-    },
-    {
-      "id": "wall_1",
-      "type": "wall",
-      "placement_type": "wall",
-      "attributes": [
-        "broken"
-      ],
-      "scale_modifier": 1.0,
-      "traversability": "blocked"
-    },
-    {
-      "id": "door_1",
-      "type": "door",
-      "placement_type": "wall",
-      "attributes": [],
-      "scale_modifier": 1.0,
-      "traversability": "passable"
-    },
-    {
-      "id": "window_1",
-      "type": "window",
-      "placement_type": "wall",
-      "attributes": [],
-      "scale_modifier": 1.0,
-      "traversability": "walkable_over"
-    },
-    {
-      "id": "extinguisher_1",
-      "type": "fire_extinguisher",
-      "placement_type": "floor",
-      "attributes": [],
-      "scale_modifier": 1.0,
-      "traversability": "passable"
-    },
-    {
-      "id": "person_1",
-      "type": "injured_person",
-      "placement_type": "floor",
-      "attributes": [],
-      "scale_modifier": 1.0,
-      "traversability": "blocked"
-    }
-  ],
-  "relations": [
-    {
-      "source_id": "obj_1",
-      "relation": "in_center",
-      "target_id": "room"
-    },
-    {
-      "source_id": "wall_1",
-      "relation": "on_left_wall",
-      "target_id": "room"
-    },
-    {
-      "source_id": "door_1",
-      "relation": "on_back_wall",
-      "target_id": "room"
-    },
-    {
-      "source_id": "window_1",
-      "relation": "on_right_wall",
-      "target_id": "room"
-    },
-    {
-      "source_id": "extinguisher_1",
-      "relation": "left_of",
-      "target_id": "wall_1"
-    },
-    {
-      "source_id": "person_1",
-      "relation": "next_to",
-      "target_id": "obj_1"
-    }
-  ]
-}
+ HATA: Error: Max retries reached
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a small sofa against the back wall. A tiny table is in front of the sofa. A door is on the left wall. A window is on the right wall. There is debris on the left side."
-  🕐  Zaman  : 23:18:03
+ INPUT  : "There is a small sofa against the back wall. A tiny table is in front of the sofa. A door is on the left wall. A window is on the right wall. There is debris on the left side."
+ Zaman  : 21:45:48
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
       "id": "sofa",
       "type": "sofa",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [
         "small"
       ],
@@ -6035,7 +5857,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "window",
@@ -6085,10 +5907,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a door on the back wall. A large bookshelf is against the left wall. An armchair is on the right side. A window is on the front wall. A small lamp is on the right side."
-  🕐  Zaman  : 23:19:19
+ INPUT  : "There is a door on the back wall. A large bookshelf is against the left wall. An armchair is on the right side. A window is on the front wall. A small lamp is on the right side."
+ Zaman  : 21:46:41
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -6103,12 +5925,12 @@
     {
       "id": "bookshelf",
       "type": "bookshelf",
-      "placement_type": "wall",
+      "placement_type": "floor",
       "attributes": [
         "large"
       ],
       "scale_modifier": 1.5,
-      "traversability": "walkable_over"
+      "traversability": "blocked"
     },
     {
       "id": "armchair",
@@ -6116,7 +5938,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "walkable_over"
     },
     {
       "id": "window",
@@ -6168,10 +5990,10 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "A wheelchair is on the left side. An oxygen tank is next to the wheelchair. A stretcher is in the center. A door is on the back wall. A window is on the right wall."
-  🕐  Zaman  : 23:20:27
+ INPUT  : "A wheelchair is on the left side. An oxygen tank is next to the wheelchair. A stretcher is in the center. A door is on the back wall. A window is on the right wall."
+ Zaman  : 21:47:36
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
@@ -6189,7 +6011,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "blocked"
+      "traversability": "passable"
     },
     {
       "id": "obj_3",
@@ -6197,7 +6019,7 @@
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
       "id": "wall_1",
@@ -6213,7 +6035,7 @@
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     }
   ],
   "relations": [
@@ -6247,50 +6069,50 @@
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a huge bed against the back wall. A nightstand is next to the bed. A small lamp is on the nightstand. A wardrobe is against the left wall. A door is on the right wall."
-  🕐  Zaman  : 23:21:26
+ INPUT  : "There is a huge bed against the back wall. A nightstand is next to the bed. A small lamp is on the nightstand. A wardrobe is against the left wall. A door is on the right wall."
+ Zaman  : 21:48:32
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
-      "id": "bed",
-      "type": "sofa",
-      "placement_type": "wall",
+      "id": "bed_1",
+      "type": "bed",
+      "placement_type": "floor",
       "attributes": [
         "huge"
       ],
       "scale_modifier": 2.0,
-      "traversability": "blocked"
-    },
-    {
-      "id": "nightstand",
-      "type": "table",
-      "placement_type": "floor",
-      "attributes": [],
-      "scale_modifier": 1.0,
       "traversability": "walkable_over"
     },
     {
-      "id": "lamp",
-      "type": "light",
+      "id": "nightstand_1",
+      "type": "nightstand",
+      "placement_type": "floor",
+      "attributes": [],
+      "scale_modifier": 1.0,
+      "traversability": "blocked"
+    },
+    {
+      "id": "lamp_1",
+      "type": "lamp",
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "passable"
     },
     {
-      "id": "wardrobe",
-      "type": "cabinet",
-      "placement_type": "wall",
+      "id": "wardrobe_1",
+      "type": "wardrobe",
+      "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
       "traversability": "blocked"
     },
     {
-      "id": "room",
-      "type": "wall",
+      "id": "door_1",
+      "type": "door",
       "placement_type": "wall",
       "attributes": [],
       "scale_modifier": 1.0,
@@ -6299,44 +6121,44 @@
   ],
   "relations": [
     {
-      "source_id": "bed",
+      "source_id": "bed_1",
       "relation": "on_back_wall",
       "target_id": "room"
     },
     {
-      "source_id": "nightstand",
+      "source_id": "nightstand_1",
       "relation": "next_to",
-      "target_id": "bed"
+      "target_id": "bed_1"
     },
     {
-      "source_id": "lamp",
-      "relation": "in_center",
-      "target_id": "nightstand"
-    },
-    {
-      "source_id": "wardrobe",
+      "source_id": "wardrobe_1",
       "relation": "on_left_wall",
       "target_id": "room"
     },
     {
-      "source_id": "door",
+      "source_id": "door_1",
       "relation": "on_right_wall",
       "target_id": "room"
+    },
+    {
+      "source_id": "lamp_1",
+      "relation": "on",
+      "target_id": "nightstand_1"
     }
   ]
 }
 ----------------------------------------------------------------------
 
 ======================================================================
-  🎙️  INPUT  : "There is a collapsed table in the center. A chair is in front of the table. A door is on the back wall. A window is on the left wall. There is rubble next to the table. A fire extinguisher is on the right side."
-  🕐  Zaman  : 23:22:33
+ INPUT  : "There is a collapsed table in the center. A chair is in front of the table. A door is on the back wall. A window is on the left wall. There is rubble next to the table. A fire extinguisher is on the right side."
+ Zaman  : 21:51:54
 ======================================================================
-  🧠 LLM JSON OUTPUT:
+ LLM JSON OUTPUT:
 ----------------------------------------------------------------------
 {
   "assets": [
     {
-      "id": "table",
+      "id": "table_1",
       "type": "table",
       "placement_type": "floor",
       "attributes": [
@@ -6346,25 +6168,25 @@
       "traversability": "blocked"
     },
     {
-      "id": "chair",
+      "id": "chair_1",
       "type": "chair",
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     },
     {
-      "id": "door",
+      "id": "door_1",
       "type": "door",
       "placement_type": "wall",
       "attributes": [
         "open"
       ],
       "scale_modifier": 1.0,
-      "traversability": "passable"
+      "traversability": "blocked"
     },
     {
-      "id": "window",
+      "id": "window_1",
       "type": "window",
       "placement_type": "wall",
       "attributes": [],
@@ -6372,7 +6194,7 @@
       "traversability": "blocked"
     },
     {
-      "id": "rubble",
+      "id": "rubble_1",
       "type": "rubble",
       "placement_type": "floor",
       "attributes": [
@@ -6382,38 +6204,38 @@
       "traversability": "blocked"
     },
     {
-      "id": "fire_extinguisher",
+      "id": "fire_extinguisher_1",
       "type": "fire_extinguisher",
       "placement_type": "floor",
       "attributes": [],
       "scale_modifier": 1.0,
-      "traversability": "walkable_over"
+      "traversability": "passable"
     }
   ],
   "relations": [
     {
-      "source_id": "chair",
+      "source_id": "chair_1",
       "relation": "in_front_of",
-      "target_id": "table"
+      "target_id": "table_1"
     },
     {
-      "source_id": "door",
+      "source_id": "door_1",
       "relation": "on_back_wall",
       "target_id": "room"
     },
     {
-      "source_id": "window",
+      "source_id": "window_1",
       "relation": "on_left_wall",
       "target_id": "room"
     },
     {
-      "source_id": "rubble",
+      "source_id": "rubble_1",
       "relation": "next_to",
-      "target_id": "table"
+      "target_id": "table_1"
     },
     {
-      "source_id": "fire_extinguisher",
-      "relation": "in_center",
+      "source_id": "fire_extinguisher_1",
+      "relation": "on_right_side",
       "target_id": "room"
     }
   ]

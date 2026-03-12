@@ -13,7 +13,7 @@ Natural Language Input
         ↓
   3D Scene Assembly (Three.js / WebGL)
         ↓
-  Evacuation Route Visualization (BFS Pathfinding)
+  Evacuation Route Visualization (A* Pathfinding)
 ```
 
 ---
@@ -81,6 +81,6 @@ Open `http://localhost:8000` in the browser.
 | LLM | Qwen2.5-Coder-7B-Instruct  |
 | Backend | Python, FastAPI, Pydantic, Uvicorn |
 | Frontend | JavaScript, Three.js (WebGL) |
-| Pathfinding | BFS |
+| Pathfinding | A* |
 | Evaluation | Python |
 
