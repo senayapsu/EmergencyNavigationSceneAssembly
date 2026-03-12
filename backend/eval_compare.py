@@ -21,7 +21,7 @@ import argparse
 from pathlib import Path
 import os
 
-# İlişkileri normalize etmek için alias sözlükleri
+# İlişkileri normalize etmek için
 RELATION_ALIASES = {
     "behind":           "on_back_wall",
     "back_wall":        "on_back_wall",
@@ -85,7 +85,7 @@ def parse_log_file(log_path: str) -> list:
 
     results = []
     for inp_pos, inp_text in inputs:
-        # Bu INPUT'tan sonra gelen ilk json'u bul
+        # Bu input'tan sonra gelen ilk json'u bul
         next_json = next(((jp, jt) for jp, jt in jsons if jp > inp_pos), None)
         if not next_json:
             continue
@@ -173,7 +173,7 @@ def compare_scenario(ref: dict, actual: dict) -> dict:
             act_t = normalize_type(act_a["type"])
             if ref_t in act_t or act_t in ref_t:
                 act_sm = act_a.get("scale_modifier", 1.0)
-                if abs(act_sm - ref_sm) < 0.15:   # ±0.15 tolerans
+                if abs(act_sm - ref_sm) < 0.15:   # ±0.15
                     sca_correct += 1
                 break
     
@@ -222,7 +222,7 @@ def compare_scenario(ref: dict, actual: dict) -> dict:
         "tra_correct": tra_correct,  "tra_total": tra_total,  "tra": round(tra_score, 3),
         "sca_correct": sca_correct,  "sca_total": sca_total,  "sca": round(sca_score, 3),
         "ra_correct":  ra_correct,   "ra_total":  ra_total,   "ra":  round(ra_score,  3),
-        "overall": round((oea_score + pta_score + tra_score + ra_score) / 4, 3)
+        "overall": round((oea_score + pta_score + sca_score + tra_score + ra_score) / 5, 3)
     }
 
 

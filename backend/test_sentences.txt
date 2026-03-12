@@ -1,7 +1,7 @@
 # TEST SENTENCES — 100 CASE
 # Her satır bir test cümlesi. # ile başlayan satırlar atlanır.
 
-# ── SIMPLE — Mevcut (S01–S15) ──────────────────────────────────
+# ── SIMPLE (S01–S15)
 There is a window on the left wall. A chair is in the center of the room.
 There is a door on the back wall. A table is in the center of the room.
 There is a window on the right wall. A sofa is against the left wall.
@@ -18,7 +18,7 @@ There is a window on the left wall. An injured person is lying in the center of 
 There is a door on the back wall. There is rubble on the right side of the room.
 There is a window on the back wall. A chair is on the left side of the room.
 
-# ── SIMPLE — Yeni (S16–S35) ────────────────────────────────────
+# ── SIMPLE (S16–S35)
 There is a large bed against the back wall. A window is on the right wall.
 A small chair is on the left side of the room. A door is on the back wall.
 There is a huge wardrobe on the right side. A window is on the front wall.
@@ -40,7 +40,7 @@ There is a door on the back wall. A huge closet is against the right wall.
 There is a window on the left wall. A first aid kit is in the center of the room.
 There is a door on the back wall. A large armchair is on the left side of the room.
 
-# ── MEDIUM — Mevcut (M01–M15) ──────────────────────────────────
+# ── MEDIUM (M01–M15)
 There is a bed against the back wall. A nightstand is next to the bed. A door is on the right wall. A chair is in front of the bed.
 There is a sofa against the back wall. A table is in the center of the room. A window is on the left wall. A chair is next to the table.
 There is a door on the back wall. There is a window on the right wall. A table is in the center. A chair is next to the table.
@@ -57,7 +57,7 @@ There is a bed against the back wall. A nightstand is next to the bed. A lamp is
 There is a door on the back wall. There is rubble in the center of the room. A broken wall is on the left side. A table is on the right side.
 There is an injured person in the center of the room. An oxygen tank is next to the injured person. A stretcher is on the right side. A door is on the back wall. A window is on the left wall.
 
-# ── MEDIUM — Yeni (M16–M30) ────────────────────────────────────
+# ── MEDIUM (M16–M30)
 There is a large bed against the back wall. A nightstand is next to the bed. A door is on the left wall.
 A sofa is against the right wall. A small table is in front of the sofa. A window is on the back wall.
 There is a door on the back wall. A stretcher is in the center. A wheelchair is next to the stretcher. A window is on the left wall.
@@ -74,7 +74,7 @@ A large table is against the back wall. A chair is in front of the table. A door
 There is a window on the back wall. A wardrobe is against the left wall. A bed is against the right wall. A door is on the front wall.
 There is a tiny fire extinguisher on the left side. A big obstacle is in the center. A door is on the back wall.
 
-# ── COMPLEX (C01–C35) ──────────────────────────────────────────
+# ── COMPLEX (C01–C35) 
 There is a door on the back wall. A window is on the left wall. A large bed is against the right wall. A nightstand is next to the bed. There is rubble in the center.
 An injured person is lying in the center. A stretcher is next to the injured person. A first aid kit is next to the stretcher. A door is on the back wall. A window is on the right wall.
 There is a huge sofa against the back wall. A small table is in front of the sofa. A chair is next to the table. A door is on the right wall. A window is on the left wall.

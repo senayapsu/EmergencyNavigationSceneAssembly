@@ -96,7 +96,7 @@ const SPATIAL_KNOWLEDGE = {
 // Bu fonksiyon LLM çıktısını Spatial Knowledge Base ile düzeltir
 
 function applySpatialInference(sceneData) {
-    console.log("🧠 [SceneSeer] Spatial Inference başlatılıyor...");
+    console.log(" Spatial Inference başlatılıyor...");
     
     const { assets, relations } = sceneData;
     let correctedRelations = [...relations];
@@ -290,7 +290,6 @@ function init() {
 
     // Texture
     const textureLoader = new THREE.TextureLoader();
-    //const woodTexture = textureLoader.load('https://threejs.org/examples/textures/hardwood2_diffuse.jpg');
     const woodTexture = textureLoader.load('./parquet.jpg');
     woodTexture.wrapS = THREE.RepeatWrapping;
     woodTexture.wrapT = THREE.RepeatWrapping;
@@ -367,7 +366,7 @@ function addModel(type, options = {}) {
             }
 
             scene.add(model);
-            console.log(`✨ GLTF Model Eklendi: ${type}`);
+            console.log(` GLTF Model Eklendi: ${type}`);
         }, undefined, (err) => console.error(err));
     } 
     
@@ -519,17 +518,17 @@ function placeAssetInScene(asset, allRelations, sceneData) {
         
         "sofa": { 
             isGLTF: false, 
-            w: 7.5,  // 2.5m genişlik
+            w: 3.0,  // 2.5m genişlik
             h: 2.5,  // 0.85m yükseklik
-            d: 3.0,  // 1.0m derinlik
+            d: 7.5,  // 1.0m derinlik
             color: 0x2c3e50  
         },
         
         "couch": { 
             isGLTF: false, 
-            w: 7.5,  // Sofa ile aynı
+            w: 3.0,  // Sofa ile aynı
             h: 2.5, 
-            d: 3.0, 
+            d: 7.5, 
             color: 0x34495e  
         },
         
@@ -546,7 +545,7 @@ function placeAssetInScene(asset, allRelations, sceneData) {
             w: 2.5,  // 0.85m genişlik 
             h: 2.7,  // 0.9m yükseklik
             d: 2.5,  // 0.85m derinlik
-            color: 0x16a085  // Turkuaz
+            color: 0x16a085  
         },
         
         "closet": { 
@@ -751,8 +750,8 @@ function placeAssetInScene(asset, allRelations, sceneData) {
         // Duvar tipine göre pozisyon
         if (wallSide === "left") {
             if (isFloorObject) {
-                // Zemin objesi → Duvara yakın ama oda içinde olması için -6
-                position.x = -6;
+                // Zemin objesi → Duvara yakın ama oda içinde olması için -7
+                position.x = -7;
                 position.z = 0;
                 position.y = 0;
                 rotation.y = Math.PI / 2; // Sola bak
@@ -765,7 +764,7 @@ function placeAssetInScene(asset, allRelations, sceneData) {
             }
         } else if (wallSide === "right") {
             if (isFloorObject) {
-                position.x = 6;
+                position.x = 7;
                 position.z = 0;
                 position.y = 0;
                 rotation.y = -Math.PI / 2;
@@ -778,7 +777,7 @@ function placeAssetInScene(asset, allRelations, sceneData) {
         } else if (wallSide === "front") {
             if (isFloorObject) {
                 position.x = 0;
-                position.z = -6;
+                position.z = -7;
                 position.y = 0;
                 rotation.y = Math.PI; 
             } else {
@@ -790,7 +789,7 @@ function placeAssetInScene(asset, allRelations, sceneData) {
         } else if (wallSide === "back") {
             if (isFloorObject) {
                 position.x = 0;
-                position.z = 6;
+                position.z = 7;
                 position.y = 0;
                 rotation.y = 0; 
             } else {
@@ -811,25 +810,25 @@ function placeAssetInScene(asset, allRelations, sceneData) {
         // SOL DUVAR
         if (relationType.includes("left")) {
             position.x = -9.9; 
-            position.z = relationType.includes("behind") ? 5 : (relationType.includes("front") ? -5 : 0);
+            position.z = relationType.includes("behind") ? 6 : (relationType.includes("front") ? -6 : 0);
             rotation.y = Math.PI / 2;
         } 
         // SAĞ DUVAR
         else if (relationType.includes("right")) {
             position.x = 9.9; 
-            position.z = relationType.includes("behind") ? 5 : (relationType.includes("front") ? -5 : 0);
+            position.z = relationType.includes("behind") ? 6 : (relationType.includes("front") ? -6 : 0);
             rotation.y = -Math.PI / 2;
         } 
         // ARKA DUVAR
         else if (relationType.includes("behind") || relationType.includes("back")) {
             position.z = 9.9; 
-            position.x = relationType.includes("left") ? -5 : (relationType.includes("right") ? 5 : 0);
+            position.x = relationType.includes("left") ? -6 : (relationType.includes("right") ? 6 : 0);
             rotation.y = Math.PI;
         } 
         // ÖN DUVAR
         else {
             position.z = -9.9; 
-            position.x = relationType.includes("left") ? -5 : (relationType.includes("right") ? 5 : 0);
+            position.x = relationType.includes("left") ? -6 : (relationType.includes("right") ? 6 : 0);
             rotation.y = 0;
         }
         
@@ -841,12 +840,12 @@ function placeAssetInScene(asset, allRelations, sceneData) {
     else {
         // Hedef room ise, belirli konum (odanın sol/sağ/merkezi)
         if (targetId === "room") {
-            if (relationType.includes("left")) position.x = -5;
-            else if (relationType.includes("right")) position.x = 5;
+            if (relationType.includes("left")) position.x = -6;
+            else if (relationType.includes("right")) position.x = 6;
             else if (relationType.includes("center")) position.x = 0;
             
-            if (relationType.includes("behind")) position.z = 5;
-            else if (relationType.includes("front")) position.z = -5;
+            if (relationType.includes("behind")) position.z = 6;
+            else if (relationType.includes("front")) position.z = -6;
             else if (relationType.includes("center")) position.z = 0;
         } 
         // Hedef başka bir obje ise göreceli konum
@@ -937,12 +936,10 @@ function placeAssetInScene(asset, allRelations, sceneData) {
         userData: extraData
     });
 }
-// --- 5. PATHFINDING (BFS ALGORİTMASI) ---
+// --- 5. PATHFINDING (A* ALGORİTMASI) ---
 function drawEmergencyPath() {
     console.log(" Emergency Path Hesaplanıyor...");
 
-    // const gridSize = 20;
-    // const gridOffset = 10;
     const gridSize = 64;
     const cellSize = 20 / gridSize; // Her hücre yaklaşık 0.3125 Three.js birimi 
 
@@ -956,10 +953,6 @@ function drawEmergencyPath() {
     let startNode = null;
     scene.children.forEach(obj => {
         if (obj.userData && obj.userData.isUser) {
-            // startNode = { 
-            //     x: Math.floor(obj.position.x + gridOffset), 
-            //     y: Math.floor(obj.position.z + gridOffset) 
-            // };
             startNode = { 
                 x: Math.floor((obj.position.x + 10) / cellSize), 
                 y: Math.floor((obj.position.z + 10) / cellSize) 
@@ -972,11 +965,6 @@ function drawEmergencyPath() {
     let allExits = [];
     scene.children.forEach(obj => {
         if (obj.userData && obj.userData.isExit) {
-            // const gx = Math.floor(obj.position.x + gridOffset);
-            // const gz = Math.floor(obj.position.z + gridOffset);
-            // allExits.push({ 
-            //     x: Math.max(0, Math.min(gridSize - 1, gx)), 
-            //     y: Math.max(0, Math.min(gridSize - 1, gz)), 
             const gx = Math.floor((obj.position.x + 10) / cellSize);
             const gz = Math.floor((obj.position.z + 10) / cellSize);
             const isDoor = obj.userData.type && obj.userData.type.includes("door");
@@ -998,11 +986,6 @@ function drawEmergencyPath() {
         if (obj.userData && obj.userData.isObstacle) {
             const box = new THREE.Box3().setFromObject(obj);
             const height = box.max.y; // Objenin yerden en tepe noktası
-            
-            // const minX = Math.floor(box.min.x + gridOffset);
-            // const maxX = Math.floor(box.max.x + gridOffset);
-            // const minZ = Math.floor(box.min.z + gridOffset);
-            // const maxZ = Math.floor(box.max.z + gridOffset);
             const minX = Math.floor((box.min.x + 10) / cellSize);
             const maxX = Math.floor((box.max.x + 10) / cellSize);
             const minZ = Math.floor((box.min.z + 10) / cellSize);
@@ -1028,8 +1011,8 @@ function drawEmergencyPath() {
         }
     });
 
-    // Engellere 2 hücre tampon ekle (insan genişliği yaklaşık 60cm = 4 hücre, minimum buffer 2 olacak şekilde)
-    inflateObstacles(grid, gridSize, 2);
+     // Engellere 2 hücre tampon ekle (insan genişliği yaklaşık 60cm = 4 hücre, minimum buffer 2 olacak şekilde)
+     inflateObstacles(grid, gridSize, 2);
 
     // 4. YOLLARI HESAPLA VE ÇİZ 
     let allPaths = [];
@@ -1046,7 +1029,7 @@ function drawEmergencyPath() {
     // Mesafeye göre sırala — en kısa önce
     allPaths.sort((a, b) => a.distance - b.distance);
 
-    // Sıralandıktan sonra çiz — index 0 artık gerçekten en kısa
+    // Sıralandıktan sonra çiz 
     allPaths.forEach((path, index) => {
         const isShortest = (index === 0);
         const color = isShortest ? 0x00ff00 : 0xff0000;
@@ -1075,6 +1058,7 @@ function drawEmergencyPath() {
             complexity: calculatePathComplexity(allPaths[0].points)
         };
     }
+
 }
 
 function inflateObstacles(grid, gridSize, radius) {
@@ -1096,80 +1080,6 @@ function inflateObstacles(grid, gridSize, radius) {
     }
 }
 
-// function findPathBFS(startNode, endNode, grid, gridSize) {
-//     let queue = [startNode];
-//     let visited = Array(gridSize).fill().map(() => Array(gridSize).fill(false));
-//     let parent = Array(gridSize).fill().map(() => Array(gridSize).fill(null));
-
-//     // Başlangıç kontrolü
-//     if (startNode.x >= 0 && startNode.x < gridSize && startNode.y >= 0 && startNode.y < gridSize) {
-//         visited[startNode.y][startNode.x] = true;
-//     } else { return null; }
-
-//     const dx = [1, -1, 0, 0];
-//     const dy = [0, 0, 1, -1];
-//     let found = false;
-//     let finalNode = null;
-
-//     // BFS Algoritması
-//     while (queue.length > 0) {
-//         let current = queue.shift();
-
-//         // Hedefe ulaştı mı?
-//         if (Math.abs(current.x - endNode.x) <= 2 && Math.abs(current.y - endNode.y) <= 2) {
-//             finalNode = current;
-//             found = true;
-//             break;
-//         }
-
-//         for (let i = 0; i < 4; i++) {
-//             let nx = current.x + dx[i];
-//             let ny = current.y + dy[i];
-
-//             if (nx >= 0 && nx < gridSize && ny >= 0 && ny < gridSize) {
-//                 if (!visited[ny][nx] && grid[ny][nx] !== Infinity) {
-//                     visited[ny][nx] = true;
-//                     parent[ny][nx] = current;
-//                     queue.push({ x: nx, y: ny });
-//                 }
-//             }
-//         }
-//     }
-
-//     if (!found) return null;
-
-//     // 3D noktaları oluştur (Eğer walkable over olan bir objeden geçecekse
-//     const pathPoints = [];
-//     let curr = finalNode;
-//     const gridOffset = 10;
-
-//     // Hedef noktayı ekle
-//     if (endNode.targetHeight !== undefined) {
-//          pathPoints.push(new THREE.Vector3(
-//             curr.x - gridOffset, 
-//             endNode.targetHeight,
-//             curr.y - gridOffset
-//         ));
-//     }
-
-//     while (curr) {
-//         // Grid'deki  karenin yüksekliği alınır
-//         let obstacleHeight = grid[curr.y][curr.x];
-        
-    
-//         let drawHeight = obstacleHeight > 0 ? (obstacleHeight + 0.4) : 0.2;
-
-//         pathPoints.push(new THREE.Vector3(
-//             curr.x - gridOffset, 
-//             drawHeight, 
-//             curr.y - gridOffset
-//         ));
-
-//         curr = parent[curr.y][curr.x];
-//     }
-    
-//     return pathPoints.reverse();
-// }
 
 function findPathAStar(startNode, endNode, grid, gridSize, cellSize) {
     // --- SINIR KONTROLÜ ---
@@ -1214,7 +1124,7 @@ function findPathAStar(startNode, endNode, grid, gridSize, cellSize) {
         if (closed[current.y][current.x]) continue;
         closed[current.y][current.x] = true;
 
-        // Hedefe ulaştık mı?
+        // Hedefe ulaştı mı?
         if (Math.abs(current.x - endNode.x) <= 2 && 
             Math.abs(current.y - endNode.y) <= 2) {
             finalNode = current;
@@ -1244,7 +1154,7 @@ function findPathAStar(startNode, endNode, grid, gridSize, cellSize) {
 
     if (!found) return null;
 
-    // --- 3D NOKTALARI OLUŞTUR (BFS ile aynı mantık korundu) ---
+    // --- 3D NOKTALARI OLUŞTUR
     const pathPoints = [];
     let curr = finalNode;
     const gridOffset = 10;
@@ -1362,7 +1272,7 @@ function updateAssistantPanel(sceneData) {
         ).length;
         
         if (obstacleCount > 0) {
-            alertBox.innerHTML = `⚠️ <strong>Caution:</strong> ${obstacleCount} obstacle(s) detected on path.`;
+            alertBox.innerHTML = `<strong>Caution:</strong> ${obstacleCount} obstacle(s) detected on path.`;
             alertBox.style.cssText = `
                 background: rgba(230, 126, 34, 0.15);
                 border-color: #e67e22;
